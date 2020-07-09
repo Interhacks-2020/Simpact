@@ -18,3 +18,7 @@ class VolunteerSignupView(CreateView):
         user = form.save()
         login(self.request, user)
         return redirect('volunteer:dashboard')
+
+
+@login_required
+@volunteer_required
