@@ -6,7 +6,4 @@ sb.name business_name,
  p.ends
 FROM  perks p
 JOIN small_businesses sb
-    ON p.id = sb.id 
-    
-    
-    
+    ON p.small_business_id = sb.id
