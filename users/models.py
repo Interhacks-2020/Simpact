@@ -10,3 +10,14 @@ class Volunteer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     #Add what they can access here?
 # Create your models here.
+
+
+class perksForm(models.Model):
+    owner = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'perksSubmit')
+    perkName = forms.CharField(max_length = 100)
+    perkPrice = forms.IntegerField(min_value = 1, max_value = 9999)
+    productDurationFrom = forms.DateField(initial = datetime.date.today)
+    productDurationTo = forms.DateField(initial = datetime.date.today)
+    combinePerk = forms.BooleanField(required = False)
+    uploadPerkPhoto = forms.ImageField(upload_to='images/')
+

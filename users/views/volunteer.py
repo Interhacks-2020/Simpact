@@ -18,7 +18,7 @@ class VolunteerSignupView(CreateView):
     form_class = VolunteerSignUpForm
     template_name = 'registration/volunteerSignUpForm.html'
     #find out what this reverse_lazy is 
-    success_url = reverse_lazy('')
+    #success_url = reverse_lazy('')
 
     def get_context_data(self, **kwargs):
         kwargs['user_type'] = 'volunteer'
@@ -32,12 +32,12 @@ class VolunteerSignupView(CreateView):
 @method_decorator([login_required, volunteer_required], name = 'dispatch')
 class VolunteerDashboardView(UpdateView):
     model = Volunteer
-    form_class = VolunteerDashbaordForm
+    form_class = VolunteerDashboardForm
     template_name = 'templates/users/VDashboard.html'
 
 @login_required
 @volunteer_required
-def volunteer_dashbaord(request, pk):
+def volunteer_dashboard(request, pk):
     dashboard = get_object_or_404(VDashboard, pk = pk)
     volunteer = request.user.volunteer
 
