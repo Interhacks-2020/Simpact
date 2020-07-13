@@ -20,6 +20,7 @@ from users import views as user_views
 urlpatterns = [
     path('admin/', admin.site.urls), 
     #after making the user view to where they should register add the view here
-    path('register/', user_views.SignUpView.as_view(), name='signup')
+    # SignUpView does not exist yet
+    #path('register/', user_views.SignUpView.as_view(), name='signup'),
     path('simpact/', include('SimpactApp.urls'))
 ]

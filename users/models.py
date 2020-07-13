@@ -1,5 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django import forms
+import datetime
 
 class User(AbstractUser):
     is_volunteer = models.BooleanField(default=False)
@@ -29,14 +31,14 @@ class perksForm(models.Model):
     productDurationFrom = forms.DateField(initial = datetime.date.today)
     productDurationTo = forms.DateField(initial = datetime.date.today)
     combinePerk = forms.BooleanField(required = False)
-    uploadPerkPhoto = forms.ImageField(upload_to='images/')
-    
-    
+    uploadPerkPhoto = forms.ImageField() # (upload_to='images/')
+
+
 class advertisementForm(models.Model):
     owner = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'perksSubmit')
     advTitle = forms.CharField(max_length = 100)
-    advDescription = forms.Textarea(max_length = 9999)
-    uploadAdvPhoto = forms.ImageField(upload_to='advimages/')
+    advDescription = forms.Textarea() #max_length = 9999)
+    uploadAdvPhoto = forms.ImageField() #upload_to='advimages/')
     customAdHomepage = forms.BooleanField(required = False)
     customAdSearch = forms.BooleanField(required = False)
     customAdBanner = forms.BooleanField(required = False)
