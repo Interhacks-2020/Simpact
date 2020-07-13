@@ -6,7 +6,11 @@ sb.name business_name,
  p.ends
 FROM  perks p
 JOIN small_businesses sb
+<<<<<<< HEAD
     ON p.id = sb.id 
     
     
     
+=======
+    ON p.small_business_id = sb.id
+>>>>>>> 313505b903ef8243be87ac19c1b8e649c839b227
