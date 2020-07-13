@@ -48,7 +48,8 @@ class perksForm(models.Model):
     productDurationTo = forms.DateField(initial = datetime.date.today)
     combinePerk = forms.BooleanField(required = False)
     uploadPerkPhoto = forms.ImageField() # (upload_to='images/')
-
+    class Meta:
+        db_table: "newperkstable"
 
 class advertisementForm(models.Model):
     owner = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'advertisementSubmit')
