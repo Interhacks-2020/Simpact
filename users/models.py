@@ -35,7 +35,7 @@ class perksForm(models.Model):
 
 
 class advertisementForm(models.Model):
-    owner = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'perksSubmit')
+    owner = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'advertisementSubmit')
     advTitle = forms.CharField(max_length = 100)
     advDescription = forms.Textarea() #max_length = 9999)
     uploadAdvPhoto = forms.ImageField() #upload_to='advimages/')
