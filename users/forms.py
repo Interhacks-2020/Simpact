@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction 
 
-from users.models import Volunteer, Subject, User
+from Users.models import Volunteer, Subject, User
 
 
 class VolunteerSignUpForm(UserCreationForm):
@@ -43,6 +43,8 @@ class BusinessSignUpForm(UserCreationForm):
         business.interests.add(*self.cleaned_data.get('interests'))
         return user
 
+    '''
+
 class NgoSignUpForm(UserCreationForm):
     interests = forms.ModelMultipleChoiceField(
         queryset = Subject.objects.all(), 
@@ -71,4 +73,4 @@ class CompanyPerks(forms.Form):
     #this is where the user goes after the form has been submitted 
     return HttpResposeRedirect('/perks/')
 
-
+'''

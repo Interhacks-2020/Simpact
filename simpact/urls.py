@@ -15,12 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from users import views as user_views
+from Users import views as user_views
+from Users.views import volunteer, business
 
 urlpatterns = [
     path('admin/', admin.site.urls), 
     #after making the user view to where they should register add the view here
     # SignUpView does not exist yet
-    #path('register/', user_views.SignUpView.as_view(), name='signup'),
-    path('simpact/', include('SimpactApp.urls'))
+    path('register/', user_views.SignUpView.as_view(), name='signup'),
+    path('register/volunteer', volunteer.VolunteerSignUpView.as_view(), name = 'volunteer_signup'),
+    path('register/business', business.BusinessSignUpView.as_view(), name = 'business_signup'),
+    path('simpact/', include('SimpactApp.urls')),
 ]
