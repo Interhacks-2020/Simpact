@@ -1,13 +1,13 @@
-from django import forms 
+from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from django.db import transaction 
+from django.db import transaction
 
-from users.models import Volunteer, Subject, User
+from Users.models import Volunteer, Subject, User
 
 
 class VolunteerSignUpForm(UserCreationForm):
     interests = forms.ModelMultipleChoiceField(
-        queryset = Subject.objects.all(), 
+        queryset = Subject.objects.all(),
         widget = forms.CheckboxSelectMultiple
         required = True
     )
@@ -26,7 +26,7 @@ class VolunteerSignUpForm(UserCreationForm):
 
 class BusinessSignUpForm(UserCreationForm):
     interests = forms.ModelMultipleChoiceField(
-        queryset = Subject.objects.all(), 
+        queryset = Subject.objects.all(),
         widget = forms.CheckboxSelectMultiple
         required = True
     )
@@ -43,13 +43,15 @@ class BusinessSignUpForm(UserCreationForm):
         business.interests.add(*self.cleaned_data.get('interests'))
         return user
 
+
+    '''
 class NgoSignUpForm(UserCreationForm):
     interests = forms.ModelMultipleChoiceField(
-        queryset = Subject.objects.all(), 
+        queryset = Subject.objects.all(),
         widget = forms.CheckboxSelectMultiple
         required = True
     )
-
+    
     class Meta(UserCreationForm.Meta):
         model = User
     
@@ -62,13 +64,10 @@ class NgoSignUpForm(UserCreationForm):
         ngo.interests.add(*self.cleaned_data.get('interests'))
         return user
 
-
         
 class CompanyPerks(forms.Form):
     
-
-
-    #this is where the user goes after the form has been submitted 
+    #this is where the user goes after the form has been submitted
     return HttpResposeRedirect('/perks/')
-
+'''
 
