@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 
-from models import perksForm
+#from models import perksForm
 
 
 def register(request):
