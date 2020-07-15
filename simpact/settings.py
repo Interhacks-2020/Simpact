@@ -83,8 +83,8 @@ DATABASES = {
 #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
 #       changed to mysql database
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'perksdb',
+        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': 'perksdb',
 #        'USER': 'root',
 #        'PASSWORD': '',
 #        'HOST': 'localhost',
