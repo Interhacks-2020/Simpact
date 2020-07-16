@@ -453,12 +453,13 @@
 </head>
 
 <body>
+	{% load static %}
 
-	<img src="landing/landingdrip.png" class="bkgtopimg"> 
+	<img src="{% static 'landingdrip.png' %}" class="bkgtopimg"> 
 
 	<div class="bigtxt"> GET STARTED WITH </div> 
 
-	<img src="landing/simpactlogo.png" class="logoimg"> 
+	<img src="{% static 'simpactlogo.png' %}" class="logoimg"> 
 
 	<div class="blackhorline"> </div>
 
@@ -469,7 +470,7 @@
 
 		<div class="threecolumn" id="firstb"> 
 				<div class="thirdbutton"> 
-					<a href="#loginvolunteers" style="text-decoration: none; color: #4CB9B2"> volunteers </a> 
+					<a href="#hello" style="text-decoration: none; color: #4CB9B2"> volunteers </a> 
 				</div>
 		</div>
 
@@ -480,9 +481,12 @@
 		</div>
 
 		<div class="threecolumn" id="thirdb">
-				<div class="thirdbutton"> 
-					<a href="businesslogin.html" style="text-decoration: none; color: #4CB9B2"> business </a>
+			
+				<div class="thirdbutton" > 
+					
+						<a href="{% url 'business-login' %}" style="text-decoration: none; color: #4CB9B2"> business </a>
 				</div>
+			
 		</div>
 
 	</div>
@@ -514,7 +518,7 @@
 
 		</div>
 
-		<img src="landing/triangle.png" id="triangleimg" style="position: relative; width: 40%; top: 250px"> 
+		<img src="{% static 'triangle.png' %}" id="triangleimg" style="position: relative; width: 40%; top: 250px"> 
 
 	</section>
 
@@ -533,7 +537,7 @@
 			</div>
 
 			<div class="twocolumn">
-				<img src="landing/volunteerimg.png" class="leftimg" > 
+				<img src="{% static 'volunteerimg.png' %}" class="leftimg" > 
 
 			</div>
 
@@ -546,7 +550,7 @@
 		<div class="row" style="position: relative; top: 250px;" id="secondinfo">
 			<!-- <div class="twocolumn" style="background: orange"> -->
 			<div class="twocolumn" >
-				<img src="landing/volunteerimg.png" class="leftimg"> 
+				<img src="{% static 'volunteerimg.png' %}" class="leftimg"> 
 			</div>
 
 			<!-- color code for checking -->
@@ -576,7 +580,7 @@
 			</div>
 
 			<div class="twocolumn">
-				<img src="landing/volunteerimg.png" class="leftimg"> 
+				<img src="{% static 'volunteerimg.png' %}" class="leftimg"> 
 
 			</div>
 
