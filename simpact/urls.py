@@ -15,8 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from users import views as user_views
+from SimpactApp import views as simpact_views
+#Commented out because it is not implemented yet
+#from users.views import volunteer, business
 
 urlpatterns = [
     path('admin/', admin.site.urls), 
-    path('simpact/', include('SimpactApp.urls'))
+    #after making the user view to where they should register add the view here
+    # SignUpView does not exist yet
+    #path('register/', user_views.SignUpView.as_view(), name='signup'),
+
+    #commented out since it is not implemented yet
+    #path('register/volunteer', volunteer.VolunteerSignUpView.as_view(), name = 'volunteer_signup'),
+    #path('register/business', business.BusinessSignUpView.as_view(), name = 'business_signup'),
+    path('', include('SimpactApp.urls')),
+    path('about', simpact_views.simpactAbout, name='simpact-about'),
 ]

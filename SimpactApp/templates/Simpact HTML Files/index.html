@@ -3,7 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charsert="UTF-8">
-	<!-- <link rel="stylesheet" type="text/css" href="ss.css">  -->
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
 	<style>
 		body {
@@ -13,41 +13,597 @@
 			font-size: 50px;
 			line-height: 59px;
 			text-align: center;
+
+			color: #48B6AC;
+
+
+			/*background: url(landingdrip.png) no-repeat top center; */
+
+			/*background: url(landingsmall.png) no-repeat top center; 
+			max-width: 100%;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;*/
 		}
 
-		.indexbutton {
-			position: relative;
-			padding: 10px;
-			padding-left: 40px;
-			padding-right: 40px;
+		html {
+			scroll-behavior: smooth;
+		}
 
-			background-color: #F57F17;
-			color: #FFFFFF;
-			font-family: Roboto;
-			font-size: 30px;
-			top: 300px;
-			text-align: center;
-			/*float: center;*/
+		.bkgtopimg {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+ 			z-index: 0;
+
+		}
+
+		.bigtxt {
+			position: relative;
+			width: 100%;
+			height: 85px;
+			/*top: 20vw;*/
+			top: 180px;
 			margin: 0 auto;
-			border-style: none;
+
+			font-weight: 300;
+			font-size: 68px;
+			line-height: 84px;
+			
+			text-align: center;
+
+		}
+
+		.logoimg {
+			position: relative;
+			/*width: 34.305vw;*/
+			width: 450px;
+
+			/*top: 12vw;*/
+			top: 170px;
+
+			margin: 0 auto;
+
+
+		}
+
+		.blackhorline {
+			position: relative;
+			width: 80%;
+			height: 0px;
+			top: 170px;
+			margin: 0 auto;
+
+			/*for testing*/
+			/*border: 1px solid #000000;*/
+		}
+
+		.usertypetxt {
+			position: relative;
+			width: 100%;
+			height: 59px;
+			top: 200px;
+
+			font-weight: 300;
+			font-size: 48px;
+			line-height: 56px;
+			text-align: center;
+		}
+
+
+
+		.thirdbutton {
+			position: relative;
+			width: 240px;
+			height: 70px;
+			background: #FFFFFF;
+			border: 3px solid #4CB9B2;
+			box-sizing: border-box;
 			border-radius: 10px;
 			cursor: pointer;
+
+			font-weight: 500;
+			font-size: 35px;
+			text-align: center;
+			padding-top: 8px;
+			line-height: 53px;
+
+			vertical-align: middle;
+			/*left: 12%;*/
+
+			margin: 0 auto;
 		}
 
-		.indexbutton:hover {
-			background-color: #FBC02D;
+		.thirdbutton:hover {
+			background: #4CB9B2;
+			color: #FFFFFF !important;
 		}
+
+		.thirdbutton:hover a {
+			color: #FFFFFF !important;
+
+		}
+
+		.ortxt {
+			position: relative;
+			font-weight: 300;
+			font-size: 36px;
+			line-height: 42px;
+			text-align: center;
+			top: 250px;
+			color: #48B6AC;
+		}
+
+		.learnmore {
+			position: relative;
+			background: #FFFFFF;
+			border: 1px solid #4CB9B2;
+			box-sizing: border-box;
+			border-radius: 50px;
+
+			width: 392px;
+			height: 96px;	
+			margin: 0 auto;
+			text-align: center;
+			color: #4CB9B2;
+			font-weight: 300;
+			font-size: 36px;
+			line-height: 42px;
+			text-align: center;
+			padding-top: 29px;
+
+			top: 275px;
+			z-index: 9999;
+
+		}
+
+		.learnmore:hover {
+			background: #4CB9B2;
+			color: #FFFFFF;
+		}
+
+		.learnmore:hover svg line {
+			stroke: #FFFFFF;
+		}
+
+		.missionsection {
+			position: absolute;
+			width: 100%;
+			height: 1024px;
+			top: 800px;
+
+			/*for testing*/
+			/*border: 1px solid #000000;*/
+
+		}
+
+		.missionbigtxt {
+			position: relative;
+			top: 100px;
+			height: 59px;
+			width: 100%;
+			font-weight: 300;
+			font-size: 48px;
+			line-height: 56px;
+			text-align: center;
+
+			color: #48B6AC;
+		}
+
+		.missionsmalltxt {
+			position: relative;
+			font-weight: 300;
+			font-size: 36px;
+			line-height: 42px;
+			text-align: center;
+
+			color: #000000;
+			top: 150px;
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		.volunteersection {
+			position: absolute;
+			width: 100%;
+			height: 1024px;
+			/*for testing*/
+			/*border: 1px solid #000000;*/
+			top: 1820px;
+		}
+
+		.nposection {
+			position: absolute;
+			width: 100%;
+			height: 1024px;
+			/*for testing*/
+			/*border: 1px solid #000000;*/
+			top: 2845px;
+		}
+
+		.businesssection {
+			position: absolute;
+			width: 100%;
+			height: 1024px;
+
+			/*for testing*/
+			/*border: 1px solid #000000;*/
+			top: 3870px;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+		.twocolumn {
+			float: left;
+			width: 50%;
+			padding: 10px;
+			top: 100px;
+			height: 80%; /* Should be removed. Only for demonstration */
+			/*margin: 0 auto;*/
+		}
+
+		.threecolumn {
+			position: relative;
+			float: left;
+			width: 33%;
+			height: 100%;
+			top: 225px;
+
+		}
+
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+		.rightinfobigtxt {
+			position: relative;
+			font-weight: 300;
+			font-size: 48px;
+			line-height: 56px;
+			text-align: center;
+
+			color: #48B6AC;
+			width: 90%;
+			margin: 0 auto;
+
+		}
+
+		.leftimg {
+			position: relative;
+			
+			width: 80%;
+			margin: 0 auto;
+			vertical-align: middle;
+			/*left: 150px;*/
+		}
+
+		.rightinfosmalltxt {
+			position: relative;
+			width: 90%;
+			font-weight: 300;
+			/*font-size: 36px;*/
+			margin: 0 auto;
+			font-size: 2.5vw;
+			line-height: 42px;
+			text-align: center;
+
+			color: #000000;
+			/*top:px;*/
+			
+			/*right: 80px;*/
+		}
+
+		.footersection {
+			position: absolute;
+			width: 100%;
+			height: 653px;
+			top: 4900px;
+
+			/*for testing*/
+			/*border: 1px solid #000000;*/
+
+
+			left: 0px;
+
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		.footerimg {
+ 			background-image: url("landing/footerimg.png");
+
+			height: 100%; 
+
+			/*top: 1432px;*/
+
+			/* Center and scale the image nicely */
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+
+		.footertxt {
+			position: relative;
+			text-align: center;
+			margin: 0 auto;
+			width: 100%;
+			font-weight: 300;
+			font-size: 36px;
+			line-height: 42px;
+			text-align: center;
+
+			color: #000000;
+			top: 500px;
+
+		}
+
+		@media only screen and (max-width: 750px) {
+			.bigtxt {
+				text-align: center;
+				font-size: 50px;
+				top: 22vw;
+
+			}
+			.logoimg {
+				width: 400px;
+				top: 18vw;
+			}
+			.blackhorline {
+				top: 20vw;
+			}
+			.usertypetxt {
+				font-size: 40px;
+				top: 25vw;
+
+			}
+
+			#firstb {
+				top: 28vw !important;
+			}
+
+			#secondb {
+				top: 35vw !important;
+			}
+
+			#thirdb {
+				top: 42vw !important;
+			}
+
+			.ortxt {
+				top: 46vw !important;
+			}
+
+			.learnmore {
+				top: 53vw !important;
+			}
+
+			#triangleimg {
+				width: 500px;
+			}
+
+			.volunteersection {
+				top: 2020px;
+			}
+
+		}
+
+		@media only screen and (max-width: 1000px) {
+			.threecolumn {
+				position: relative;
+				width: 100%;
+			}
+			
+			#firstb {
+				top: 225px;
+			}
+
+			#secondb {
+				top: 250px;
+			}
+
+			#thirdb {
+				top: 275px;
+			}
+
+			.ortxt {
+				top: 310px;
+			}
+
+			.learnmore {
+				top: 350px;
+			}
+
+			.missionsection {
+				top: 1000px;
+			}
+
+			.twocolumn {
+				position: relative;
+				width: 100%;
+			}
+
+			.row {
+				top: 20px !important;
+			}
+
+			#firstinfo {
+				top: 0px !important;
+			}
+
+			.nposection{
+				top: 3000px;
+			} 
+
+			.businesssection{
+				top: 4000px;
+			}
+
+			.footersection {
+				top: 5250px;
+			}
 
 	</style>
+
 </head>
 
 <body>
 
-	<button type="button" class="indexbutton" style="margin-right: 100px; padding-left: 60px; padding-right: 60px;"> Volunteer </button>
-	<button type="button" class="indexbutton" style="padding-left: 60px; padding-right: 60px;"> Business </button>
-	<button type="button" class="indexbutton" style="margin-left: 100px;"> Organization </button>
+	<img src="landing/landingdrip.png" class="bkgtopimg"> 
+
+	<div class="bigtxt"> GET STARTED WITH </div> 
+
+	<img src="landing/simpactlogo.png" class="logoimg"> 
+
+	<div class="blackhorline"> </div>
+
+	<div class="usertypetxt"> Select User Type: </div>
 
 
+	<div class="row">
+
+		<div class="threecolumn" id="firstb"> 
+				<div class="thirdbutton"> 
+					<a href="#loginvolunteers" style="text-decoration: none; color: #4CB9B2"> volunteers </a> 
+				</div>
+		</div>
+
+		<div class="threecolumn" id="secondb">
+				<div class="thirdbutton"> 
+					<a href="npologin.html" style="text-decoration: none; color: #4CB9B2"> nonprofits </a>
+				</div>
+		</div>
+
+		<div class="threecolumn" id="thirdb">
+				<div class="thirdbutton"> 
+					<a href="businesslogin.html" style="text-decoration: none; color: #4CB9B2"> business </a>
+				</div>
+		</div>
+
+	</div>
+
+
+	<div class="ortxt"> or </div>
+
+
+	<a href="#info" style="text-decoration: none; color: #4CB9B2"> 
+		
+		<div class="learnmore"> 
+			LEARN MORE
+
+			<svg width="56" height="33" viewBox="0 0 56 33" fill="none" xmlns="http://www.w3.org/2000/svg" style="padding-top: 7px;">
+				<line x1="7.07107" y1="5" x2="28" y2="25.9289" stroke="#4CB9B2" stroke-width="10" stroke-linecap="round"/>
+				<line x1="5" y1="-5" x2="34.598" y2="-5" transform="matrix(-0.707107 0.707107 0.707107 0.707107 56 5)" stroke="#4CB9B2" stroke-width="10" stroke-linecap="round"/>
+			</svg>
+
+		</div>
+
+	</a>
+
+
+	<!-- Mission Statement Section -->
+	<section id="info" class="missionsection">
+		<div class="missionbigtxt"> Our Mission </div>
+		<div class="missionsmalltxt"> 
+			To reinvent youth community service, volunteer recruitment and small business marketing.  
+
+		</div>
+
+		<img src="landing/triangle.png" id="triangleimg" style="position: relative; width: 40%; top: 250px"> 
+
+	</section>
+
+
+	<!-- Volunteer Info Section -->
+	<section id="volunteerinfo" class="volunteersection"> 
+
+		<div class="row" style="position: relative; top: 250px;" id="firstinfo">
+			<div class="twocolumn">
+				<div class="rightinfobigtxt"> Volunteers </div> <br> 
+				<div class="rightinfosmalltxt"> 
+					Are you a highly active student but don’t know where to find volunteer opportunities in a field you are passionate about? Welcome to Simpact! Explore volunteer listings,  earn points and redeem for perks  at partnering businesses! Support your local businesses while expanding your resume! <br> 
+					For ages younger than 10, we advise you to sign up with your parents!
+				</div>
+				
+			</div>
+
+			<div class="twocolumn">
+				<img src="landing/volunteerimg.png" class="leftimg" > 
+
+			</div>
+
+		</div>
+	</section> 
+
+	<!-- NPO Info Section -->
+	<section id="nposection" class="nposection"> 
+
+		<div class="row" style="position: relative; top: 250px;" id="secondinfo">
+			<!-- <div class="twocolumn" style="background: orange"> -->
+			<div class="twocolumn" >
+				<img src="landing/volunteerimg.png" class="leftimg"> 
+			</div>
+
+			<!-- color code for checking -->
+			<!-- <div class="twocolumn" style="background: green"> -->
+			<div class="twocolumn">
+				<div class="rightinfobigtxt"> NonProfit Organizations </div> <br>
+				<div class="rightinfosmalltxt"> 
+					Do you want more student volunteers to know about your organization? List your posting to soon see students from around the area! Provide points when students fulfill their volunteer requirements.
+				</div>
+			</div>
+
+		</div>
+	</section> 
+
+
+	<!-- Business Info Section -->
+	<section id="businesssection" class="businesssection"> 
+
+		<div class="row" style="position: relative; top: 250px;">
+			<div class="twocolumn">
+				<br> 
+				<div class="rightinfobigtxt"> Business </div> <br> 
+				<div class="rightinfosmalltxt"> 
+					Want more traffic to your store? We can help! Allow students to redeem points for items in your store. Submit the postings to expect visitors from the neighborhood!
+				</div>
+				
+			</div>
+
+			<div class="twocolumn">
+				<img src="landing/volunteerimg.png" class="leftimg"> 
+
+			</div>
+
+		</div>
+	</section> 
+
+
+	<!-- Footer -->
+	<section id="footer" class="footersection"> 
+		<div class="footerimg">
+
+			<div class="footertxt"> 
+				Made By: M2K LAB
+			</div>
+		</div>
+	</section>
+
+	
+<!-- 
+<script type="text/javascript">
+	$(function() {
+  $('a[href*=#]').on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+  });
+});
+</script> -->
 </body>
 
 

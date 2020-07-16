@@ -32,13 +32,14 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'SimpactApp.apps.SimpactappConfig',
-    'users.apps.UsersConfig',
+    #'Users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -77,10 +78,21 @@ WSGI_APPLICATION = 'simpact.wsgi.application'
 
 DATABASES = {
     'default': {
+#       before was this
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+#       changed to mysql database
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#        'NAME': 'perksdb',
+#        'USER': 'root',
+#        'PASSWORD': '',
+#        'HOST': 'localhost',
+#        'PORT':'3306',
+#        'OPTIONS': {
+#            'init_command': "SET sql_mode = 'STRICT_TRANS_TABLES'"
+        }
     }
-}
 
 
 # Password validation
@@ -120,3 +132,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+AUTH_USER_MODEL = 'users.User'
+
