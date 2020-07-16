@@ -1,0 +1,398 @@
+
+    /* Navbar Style*/
+    .sidenavbar {
+        height: 100%;
+        width: 75px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background: #4CB9B2;
+        border-radius: 0px 10px 10px 0px;
+        overflow-x: hidden;
+        padding-top: 170px;
+        text-align: center;
+
+    }
+
+    .sidenavbar a {
+        /*padding: 6px 8px 6px 16px;*/
+        padding-bottom: 55px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #FFFFFF;
+        display: block;
+    }
+
+    .sidenavbar a:hover {
+        fill: orange;
+        color: orange;
+    }
+
+    .homesvg {
+        /*color: #FFFFFF;*/
+        fill: #FFFFFF;
+        width: 40px;
+    }
+
+    .homesvg:hover {
+        width: 80px;
+    /*box-shadow: 120px 80px 40px 20px #0ff;*/
+    }
+
+    .homesvgpath:hover {
+        /*fill: #FBC02D;*/
+        width: 80px;
+        /*box-shadow: 120px 80px 40px 20px #0ff;*/
+    }
+
+    .homesvgpath:active {
+        fill: #FBC02D;
+    }
+
+    .perkssvg {
+        fill: #FFFFFF;	
+    }
+
+    .perkssvg:hover {
+        margin-top: -10px;
+        width: 60px;
+        height: 60px;
+    
+    }
+
+    .perkssvgpath:active {
+        fill: #FBC02D;
+    }
+
+    .promotesvg {
+        margin-top: 10px;
+        width: 45px;
+    }
+
+    .promotesvg:hover {
+        margin-top: 0px;
+        width: 55px;
+        height: 50px;
+    }
+
+
+    .promotesvgpath:active {
+        fill: #FBC02D;
+    }
+
+
+    /* Content style*/
+    body {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        color: #000000;
+        overflow-x: hidden;
+    }
+
+    .content {
+        /* Dont change*/
+        margin-left: 60px; 
+        margin-top: -10px;
+        margin-right: -10px;
+        margin-bottom: -10px;
+        font-size: 28px; 
+        padding: 0px 10px;
+        background-color: #EDF0F0;
+
+        /* Change height */
+        height: 1848px;
+    }
+
+    .titletxt {
+        position: relative;
+        width: 222px;
+        left: 60px;
+        top: 50px;
+        
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 42px;
+
+        color: #4CB9B2;
+    }
+
+    .bellsvg {
+        position: relative;
+        float: right;
+        top: 10px;
+        right: 220px;
+
+    }
+
+    .usericon {
+        position: relative;
+        float: right;
+        top: 10px;
+        right: 90px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #FFFFFF;
+        min-width: 210px;
+        border-radius: 10px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        float: right;
+        text-align: right;
+        right: 130px;
+        top: 72px;
+        list-style-type:none;
+        padding-top: 16px;
+        padding-bottom: 25px;
+
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 21px;
+
+    }
+
+    .dropdown-content a {
+
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+
+    .dropdown-content a:hover {
+        color: #4DB6AC;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+
+
+    .welcomebox {
+        position: relative;
+        width: 1170px;
+        height: 191px;
+        left: 60px;
+        top: 100px;
+
+        background: #FFFFFF;
+        border-radius: 40px;
+        display: flex;
+    }
+
+    .welcometxt {
+        position: relative;
+        width: 582px;
+        height: 42px;
+        left: 60px;
+        top: 50px;
+
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 42px;
+    }
+
+    .welcome_img{
+        float: right;
+        position: relative;
+        left: 95px;
+
+    }
+
+    .welcomecontxt {
+        /* Dont change*/
+        position: relative;
+        width: 582px;
+        height: 42px;
+        font-size: 24px;
+        line-height: 28px;
+
+        left: 60px;
+        top: 60px;
+    }
+
+    .boxrows{
+        display: flex;
+        
+    }
+    .boxtemplate {
+        /* Dont change*/
+        position: relative;
+        width: 1170px;
+        background: #FFFFFF;
+        border-radius: 40px;
+
+        /* Change here*/
+        height: 275px;
+        width: 349px;
+        left: 60px;
+        top: 150px;
+    }
+
+    #totaladsbox{
+        margin-right: 61px;
+    }
+
+    .adnumber{
+        position:relative;
+        left: 152px;
+        top: 30px;
+        font-size: 70px;
+    }
+
+    .promotebtn{
+            height: 50px;
+            width: 150px;
+
+            background-color: #fff;
+            border: 1px solid #4CB9B2;
+            box-sizing: border-box;
+            border-radius: 10px;
+            font-size: 18px;
+            line-height: 21px;
+
+            color: #4CB9B2;
+
+            position: relative;
+            left: 90px;
+           
+    }
+
+    .promotebtn:hover{
+        color: #2B6561;
+        border: 1px solid #2B6561;
+        cursor: pointer;
+    }
+
+    /*Total number of clicks box in 2nd row of page*/
+    #clicksbox{
+        margin-right: 61px;
+    }
+
+    .clicknumber{
+        position:relative;
+        left: 133px;
+        top: 30px;
+        font-size: 70px;
+    }
+
+    .arrowup{
+        margin-right: 10px;
+        border: solid #4CB9B2;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+    }
+
+    .adbtn{
+        height: 50px;
+        width: 150px;
+
+        background-color: #fff;
+        border: 1px solid #4CB9B2;
+        box-sizing: border-box;
+        border-radius: 10px;
+        font-size: 18px;
+        line-height: 21px;
+
+        color: #4CB9B2;
+
+        position: relative;
+        left: 100px;
+       
+    }
+
+    .adbtn:hover{
+        border: 1px solid #2B6561;
+        cursor: pointer;
+    }
+
+    /*Sales box*/
+    .salesnumber{
+        position:relative;
+        left: 83px;
+        top: 30px;
+        font-size: 70px;
+    }
+
+
+    .headertxttemplate {
+        /* Dont change*/
+        position: relative;
+        width: 582px;
+        height: 29px;
+        left: 60px;
+        top: 35px;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    /*Age demographic chart*/
+    .demographicbox{
+        position: relative;
+        width: 567px;
+        height: 692px;
+        left: 60px;
+        top: 200px;
+
+        background: #FFFFFF;
+        border-radius: 40px;
+    }
+
+    /*The box that contains info abt age demographics*/
+    #agechart{
+        margin-right: 35px;
+    }
+
+    /*The svg that contains the image and text for age demographics*/
+    .agechartandtext{
+        position: relative;
+        top: 80px;
+        left: 59px;
+    }
+
+    .viewschart{
+        position: relative;
+        top: 60px;
+        left: 60px;
+        margin-bottom: 80px;
+    }
+    
+    .viewstoday{
+        position: relative;
+        top: 100px;
+        left: 60px;
+    }
+
+    .addnewad{
+        position: relative;
+        top: 300px;
+        left: 350px;
+    }
+    .createad{
+        height: 60px;
+        width: 400px;
+
+        background-color: #F57F17;
+        border: none;
+        border-radius: 10px;
+        font-size: 18px;
+        line-height: 21px;
+
+        color: #fff;
+
+        position: relative;
+        left: 100px;
+    }
