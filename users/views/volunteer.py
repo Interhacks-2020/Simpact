@@ -29,6 +29,7 @@ class VolunteerSignupView(CreateView):
         login(self.request, user)
         return redirect('volunteer:dashboard')
 
+
 '''
 
 @method_decorator([login_required, volunteer_required], name = 'dispatch')
@@ -36,9 +37,6 @@ class VolunteerDashboardView(UpdateView):
     model = Volunteer
     form_class = VolunteerDashboardForm
     template_name = 'templates/users/VDashboard.html'
-
-
-
 
 @login_required
 @volunteer_required
@@ -51,3 +49,4 @@ def volunteer_dashboard(request, pk):
     })
 
 '''
+

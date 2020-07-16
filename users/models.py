@@ -12,7 +12,6 @@ class Volunteer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     #Add what they can access here?
 
-
 class Business(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     #Add what they can access here?
@@ -40,6 +39,7 @@ class Subject(models.Model):
 
 #end of temp
 
+
 class perksForm(models.Model):
     owner = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'perksSubmit')
     perkName = forms.CharField(max_length = 100)
@@ -51,16 +51,17 @@ class perksForm(models.Model):
     class Meta:
         db_table: "newperkstable"
 
+    
 class advertisementForm(models.Model):
-    owner = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'advertisementSubmit')
+    owner = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'perksSubmit')
     advTitle = forms.CharField(max_length = 100)
-    advDescription = forms.Textarea() #max_length = 9999)
-    uploadAdvPhoto = forms.ImageField() #upload_to='advimages/')
+    advDescription = forms.Textarea(max_length = 9999)
+    uploadAdvPhoto = forms.ImageField(upload_to='advimages/')
     customAdHomepage = forms.BooleanField(required = False)
     customAdSearch = forms.BooleanField(required = False)
     customAdBanner = forms.BooleanField(required = False)
     advDurationFrom = forms.DateField(initial = datetime.date.today)
     advDurationTo = forms.DateField(initial = datetime.date.today)
    
-
 '''
+
