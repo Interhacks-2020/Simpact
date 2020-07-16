@@ -29,6 +29,8 @@ class BusinessSignupView(CreateView):
         login(self.request, user)
         return redirect('business:dashboard')
 
+'''
+
 @method_decorator([login_required, business_required], name = 'dispatch')
 class BusinessDashboardView(UpdateView):
     model = Business
@@ -59,3 +61,5 @@ def upload_perks(request, pk):
             form = NameForm()
 
         return render(request, 'perksForm.html', {'form' : form})
+
+'''

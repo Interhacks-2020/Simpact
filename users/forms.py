@@ -1,6 +1,6 @@
-from django import forms
+from django import forms 
 from django.contrib.auth.forms import UserCreationForm
-from django.db import transaction
+from django.db import transaction 
 
 from Users.models import Volunteer, Subject, User
 
@@ -43,15 +43,15 @@ class BusinessSignUpForm(UserCreationForm):
         business.interests.add(*self.cleaned_data.get('interests'))
         return user
 
+'''
 
-    '''
 class NgoSignUpForm(UserCreationForm):
     interests = forms.ModelMultipleChoiceField(
         queryset = Subject.objects.all(),
         widget = forms.CheckboxSelectMultiple
         required = True
     )
-    
+
     class Meta(UserCreationForm.Meta):
         model = User
     
