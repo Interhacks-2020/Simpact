@@ -1,0 +1,165 @@
+.twocolumn {
+	float: left;
+	width: 50%;
+	padding: 10px;
+	top: 100px;
+	height: 100%;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.logincard {
+	position: absolute;
+	width: 85%;
+	height: 650px;
+	margin-left: 7%;
+	margin-top: 3%;
+	display: block;
+
+	background: #FFFFFF;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+	border-radius: 50px;
+	border: none;
+}
+
+.line {
+	border-left: 3px solid #C4C4C4;
+	height: 500px;
+	position: absolute;
+	left: 50%;
+	margin-left: -3px;
+	top: 10%;
+	border-radius: 5px;
+}
+
+hr  {
+	position: relative;
+	border: 1px solid #C4C4C4;
+	display: none;
+	top: 275px;
+	width: 80%;
+	border-radius: 5px;
+}
+
+.bigheadertxt {
+	position: relative;
+	font-weight: 300;
+	font-size: 64px;
+	line-height: 75px;
+	text-align: center;
+
+	color: #000000;
+
+	top: 50px;
+}
+
+.usertagtxt {
+	position: relative;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 28px;
+	text-align: center;
+
+	top: 40px;
+
+}
+
+.labeltxt {
+	position: relative;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 21px;
+	left: 10%;
+	top: 100px;
+}
+
+.txtinput {
+	position: relative;
+	width: 80%;
+	height: 54px;
+
+	margin: 0 auto;
+	display: block;
+	background: rgba(196, 196, 196, 0.23);
+	border-radius: 4px;
+	border: none;
+
+	top: 100px;
+	padding-left: 20px;
+
+	font-weight: 200;
+	font-size: 18px;
+	line-height: 21px;
+}
+
+.forgetpassword {
+	position: relative;
+	right: 10%;
+	top: 115px;
+
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+	text-align: right;
+
+	color: #F57F17;
+}
+
+.forgetpassword a:hover {
+	font-weight: bold !important;
+}
+
+.enterbutton {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	cursor: pointer;
+
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 28px;
+	text-align: center;
+	color: #FFFFFF;
+
+	/*background: #F57F17;*/
+	border-radius: 10px;
+	border: none;
+
+	width: 130px;
+	height: 45px;
+	top: 200px;
+}
+
+
+.enterbutton:hover {
+	background: #F2C34A !important;
+}
+
+@media only screen and (max-width: 900px) {
+	.twocolumn {
+		position: relative;
+		width: 100%;
+		top: 0px;
+	}
+
+	.logincard {
+		height: 1300px;
+		margin-bottom: 100px;
+	}
+
+	#signupcol {
+		top: 300px;
+	}
+
+	.line {
+		display: none;
+	}
+
+	hr {
+		display: block;
+	}
+}
