@@ -317,7 +317,6 @@
 
 		.footerimg {
  			background-image: url("{% static 'footerimg.png' %}");
-
 			height: 100%; 
 
 			/*top: 1432px;*/
@@ -454,7 +453,9 @@
 </head>
 
 <body>
-	
+
+	{% load static %}
+
 
 	<img src="{% static 'landingdrip.png' %}" class="bkgtopimg"> 
 
@@ -478,6 +479,7 @@
 		<div class="threecolumn" id="secondb">
 				<div class="thirdbutton"> 
 					<a href="{% url 'npo-login' %}" style="text-decoration: none; color: #4CB9B2"> nonprofits </a>
+
 				</div>
 		</div>
 
