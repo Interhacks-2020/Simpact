@@ -14,6 +14,11 @@ def npoLogin(request):
 def simpactAbout(request):
     return HttpResponse('<h1> this is the about page <h1>')
 
+def volunteerDescription(request):
+	return render( request, 'SimpactApp/volunteeerdescription.html')
+
+
+
 
 
 
