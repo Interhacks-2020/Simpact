@@ -15,5 +15,11 @@ def simpactAbout(request):
     return HttpResponse('<h1> this is the about page <h1>')
 
 
+def testPath(request):
+    return HttpResponse('<h1> hello testing <h1>')
+
+
+
+
 
 # Create your views here.

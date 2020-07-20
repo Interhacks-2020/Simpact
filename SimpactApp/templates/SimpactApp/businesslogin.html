@@ -28,10 +28,13 @@
 </head>
 
 <body>
-
+	{% load crispy_forms_tags %}
+	{% block content %}
 	<div class="logincard"> 
 		<div class="row">
-			<form action="/action_page.php" method="post">
+			<form method="POST" novalidate>
+			<!-- <form action="/action_page.php" method="POST"> -->
+				{% csrf_token %}
 				<div class="twocolumn" id="logincol">
 					<div class="bigheadertxt"> LOGIN </div>
 					<div class="usertagtxt" style="color: #F57F17;"> business </div>
@@ -43,7 +46,9 @@
 	    			<input type="password" class="txtinput" placeholder="Enter Password" name="psw" required>
 
 	    			 <div class="forgetpassword" > <a href="#forgetpass" style="text-decoration: none; color: #F57F17;" class="forpassid"> Forget Password? </a> </div>
-
+					
+					 <input type="hidden" name="next" value="/index.html">
+					 {{ form|crispy }}
 	    			<button type="submit" class="enterbutton" style="background: #F57F17"> LOGIN </button>
 				</div>
 			</form>
@@ -71,6 +76,7 @@
 			</form>
 		</div> 
 	</div>
+	{% endblock content %}
 </body>
 
 

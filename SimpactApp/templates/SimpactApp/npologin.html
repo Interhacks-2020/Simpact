@@ -10,8 +10,6 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
 
 
-
-
 	<style>
 		body {
 			background: #F1F1F1;
@@ -30,10 +28,11 @@
 </head>
 
 <body>
-
+	{% block content %}
 	<div class="logincard"> 
 		<div class="row">
-			<form action="/action_page.php" method="post">
+			<form action="/action_page.php" method="POST">
+				{% csrf_token %}
 				<div class="twocolumn" id="logincol">
 					<div class="bigheadertxt"> LOGIN </div>
 					<div class="usertagtxt" style="color: #F57F17;"> nonprofit </div>
@@ -73,6 +72,7 @@
 			</form>
 		</div> 
 	</div>
+	{% endblock content %}
 </body>
 
 
