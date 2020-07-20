@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+	<title> Volunteer: Opportunities </title>
+
+	<style>
+		/* Content style*/
+		body {
+			font-family: Roboto;
+			font-style: normal;
+			font-weight: normal;
+			color: #000000;
+			background: #EDF0F0;
+		}
+
+		.vtopnav {
+			/*overflow: hidden;*/
+			list-style:none;
+			text-align:center;
+		}
+
+		.vtopnav a {
+			float: right;
+			color: #f2f2f2;
+			text-align: center;
+			padding: 20px 20px;
+			padding-left: 30px;
+			padding-right: 30px;
+			text-decoration: none;
+			font-size: 17px;
+			transition: 0.5s;
+
+			text-decoration: none;
+			color: #000000;
+			display:inline;
+			text-align:center;
+		}
+
+
+
+		.vtopnav a:hover {
+			color: #4CB9B2;
+  			transition: 0.4s;
+		}
+
+		/*.vtopnav a:after {
+			content: '';
+			position: absolute;	
+			left: 50%;
+			bottom: -5px;
+			transform: translateX(-50%) scaleX(0);
+			-webkit-transform: translateX(-50%) scaleX(0);
+			-webkit-transform-origin: 50% 50%;
+			width: 80%;
+			height: 2px;
+			background-color: #4CB9B2;
+			-webkit-transition: transform 250ms;
+			transition: transform 250ms;		
+		}
+
+
+		.vtopnav a:hover:after {
+			-webkit-transform: translateX(-50%) scaleX(1);
+			transform: translateX(-50%) scaleX(1);  
+		}*/
+
+
+		.vtopnav a.active{
+			color: #4CB9B2;
+		}
+
+		.loginbut {
+			cursor: pointer;
+			float: right;
+			color: #f2f2f2;
+			text-align: center;
+
+			margin-top: 15px;
+			margin-left: 20px;
+			margin-right: 10px;
+			padding-left: 30px;
+			padding-right: 30px;
+			padding-top: 8px;
+			padding-bottom: 8px;
+			text-decoration: none;
+			font-size: 17px;
+			transition: 0.5s;
+
+			text-decoration: none;
+			color: #000000;
+			display:inline;
+			text-align:center;
+
+			background: #FF8816;
+			border-radius: 30px;
+			border: none;
+		}
+ 
+		.loginbut:hover {
+			background: #FDCD01;
+
+		}
+
+		/* The Modal (background) */
+		.modal {
+			display: none; /* Hidden by default */
+			position: fixed; /* Stay in place */
+			z-index: 1; /* Sit on top */
+			padding-top: 100px; /* Location of the box */
+			left: 0;
+			top: 0;
+			width: 100%; /* Full width */
+			height: 100%; /* Full height */
+			overflow: auto; /* Enable scroll if needed */
+			background-color: rgb(0,0,0); /* Fallback color */
+			background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+
+/* Modal Content */
+		.modal-content {
+			background-color: #fefefe;
+			margin: auto;
+			padding: 20px;
+			/*border: 1px solid #888;*/
+			border: none;
+			border-radius: 5px;
+			width: 45%;
+		}
+		
+		/* The Close Button */
+		.close {
+		color: #000000;
+		float: right;
+		font-size: 35px;
+		font-weight: 400;
+		margin-top: 20px;
+		margin-right: 20px;
+		}
+
+		.close:hover, .close:focus {
+		/*color: #000;*/
+		text-decoration: none;
+		cursor: pointer;
+		color: red;
+		/*cursor: pointer;*/
+		}
+
+		.loginbigtxt{
+		    margin-left: 30px;
+		    letter-spacing: 2px;
+		    font-weight: 400;
+		    text-align: center;
+		    width: 100%;
+		}
+
+		.loginsmalltxt {
+			width:80%;
+			text-align: center;
+			margin: 0 auto;
+			font-weight: 300;
+			font-size: 18px;
+			line-height: 28px;
+
+			color: #000000;	
+
+		}
+
+		.twocolumn {
+			float: left;
+			width: 50%;
+			padding: 10px;
+			top: 100px;
+			height: 100%;
+		}
+
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+			/*width: 80%;*/
+		}
+
+
+		.logindirectbutton {
+			/*float: left;*/
+			/*margin-left: 20%;*/
+			background: #F57F17;
+			border-radius: 10px;
+			border: none;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			padding-left: 30px;
+			padding-right: 30px;
+
+			font-weight: normal;
+			font-size: 24px;
+			line-height: 28px;
+			text-align: center;
+
+			margin: 0 auto;
+			display: block;
+
+			color: #FFFFFF;
+			cursor: pointer;
+		}
+
+		.logindirectbutton:hover {
+			background: #FDCD01;
+		}
+
+		.signupdirectbutton{
+			/*margin-top: -200px;*/
+			/*margin-left: 60%;*/
+			background: #4CB9B2;
+			border-radius: 10px;
+			border: none;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			padding-left: 30px;
+			padding-right: 30px;
+
+			font-weight: normal;
+			font-size: 24px;
+			line-height: 28px;
+			text-align: center;
+
+			color: #FFFFFF;
+
+			margin: 0 auto;
+			display: block;
+			cursor: pointer;
+		}
+
+		.signupdirectbutton:hover {
+			background: #FDCD01;
+		}
+
+
+		.labeltxt {
+			position: relative;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 21px;
+			left: 10%;
+			top: 0px;
+		}
+
+		.txtinput {
+			position: relative;
+			width: 80%;
+			height: 54px;
+
+			margin: 0 auto;
+			display: block;
+			background: rgba(196, 196, 196, 0.23);
+			border-radius: 4px;
+			border: none;
+
+			top: 0px;
+			padding-left: 20px;
+
+			font-weight: 200;
+			font-size: 18px;
+			line-height: 21px;
+		}
+
+		.forgetpassword {
+			position: relative;
+			right: 10%;
+			top: 10px;
+
+			font-weight: normal;
+			font-size: 18px;
+			line-height: 21px;
+			text-align: right;
+
+			color: #F57F17;
+		}
+
+		.forgetpassword a:hover {
+			font-weight: bold !important;
+		}
+
+		.enterbutton {
+			position: relative;
+			display: block;
+			margin: 0 auto;
+			cursor: pointer;
+
+			font-weight: normal;
+			font-size: 24px;
+			line-height: 28px;
+			text-align: center;
+			color: #FFFFFF;
+
+			background: #F57F17;
+			border-radius: 10px;
+			border: none;
+
+			width: 130px;
+			height: 45px;
+			top: 0px;
+		}
+
+
+		.enterbutton:hover {
+			background: #F2C34A !important;
+		}
+
+
+
+/*End modal*/
+
+
+
+		.titletxt {
+			position: relative;
+			width: 515px;
+			left: 60px;
+			top: 50px;
+			
+			font-weight: bold;
+			font-size: 36px;
+			line-height: 42px;
+
+			color: #4CB9B2;
+		}
+
+		
+		.findbox {
+			position: relative;
+			width: 80%;
+			height: 580px;
+			top: 100px;
+			margin: 0 auto;
+
+			background: #FFFFFF;
+			border-radius: 40px;
+		}
+
+		.findtxt {
+			position: relative;
+			width: 90%;
+			height: 42px;
+			left: 60px;
+			top: 50px;
+			/*background: orange;*/
+
+			font-weight: bold;
+			font-size: 24px;
+			line-height: 42px;
+		}
+
+		.subfindtxt {
+			position: relative;
+			width: 219px;
+			height: 23px;
+			left: 12%;
+			/*left: 150px;*/
+			top: 120px;
+
+			font-weight: bold;
+			font-size: 18px;
+			line-height: 21px;
+		}
+
+
+
+
+		* {
+			box-sizing: border-box;
+		}
+
+		.iconbox {
+			position: relative;
+			/*left: 210px;*/
+			width: 80%;
+			top: 70px;
+			height: 110px;
+			margin: 0 auto;
+		}
+
+		/* Clear floats after the columns */
+		.iconrow:after {
+			content: "";
+			display: table;
+			clear: both;
+
+		}
+
+		/* Create three equal columns that floats next to each other */
+		.iconcolumn {
+
+			float: left;
+			width: 14%;
+			padding: 10px;
+
+			/*padding-left: 3.5%;*/
+			
+			margin-top: 60px;
+			text-align: center;
+
+		}
+
+		.filtericon {
+			position: relative;
+			width: 57px;
+			height: 57px;
+			border-radius: 50%;
+			background: #4CB9B2;
+			text-align: center;
+			margin: 0 auto;
+			cursor: pointer;
+		}
+
+		.filtericon:hover {
+			background: #FBC02D;
+		}
+
+		.filtertxt {
+			text-align: center;
+			/*padding-left: -3.5% !important;*/
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 16px;
+			margin-top: 5px;
+		}
+
+		
+		.ortxt {
+			position: relative;
+			text-align: center;
+			width: 80px;
+			height: 23px;
+			font-weight: bold;
+			font-size: 18px;
+			line-height: 21px;
+
+			top: 75px;
+			/*left: 540px;*/
+			margin: 0 auto;
+			background-color: #FFFFFF;
+		}
+
+		
+		.horline {
+			position: relative;
+			top: 100px;
+			left: 0px;
+			width: 80%;
+			
+		}
+
+
+		.searchcontainer {
+			position: relative;
+			width: 80%;
+			top: 130px;
+			margin: 0 auto;
+			/*border: 1px solid black;*/
+		}
+
+		/*input[type=text] {
+			width: 33.05vw;
+			height: 51px;
+			box-sizing: border-box;
+			border-radius: 30px;
+			background: #FFFFFF;
+			border: 1px solid #000000;
+			padding-left: 50px;
+			font-size: 25px;
+			font-weight: 200;
+			background-image: url('searchicon.png');
+			background-position: 10px 10px; 
+  			background-repeat: no-repeat;
+		}*/
+		
+
+		.searchbar {
+			position: relative;
+			/*top: 135px;*/
+			/*left: 261px;*/
+			left: 10%;
+			width: 35vw;
+			height: 51px;
+			box-sizing: border-box;
+			border-radius: 30px;
+			background: #FFFFFF;
+			border: 1px solid #000000;
+			padding-left: 50px;
+			font-size: 25px;
+			font-weight: 200;
+			background-image: url('searchicon.png');
+			background-position: 10px 10px; 
+  			background-repeat: no-repeat;
+		}
+
+		.submitbutton {
+			position: relative;
+			width: 150px;
+			height: 51px;
+			top: 0px;
+			/*left: 265px;*/
+			left: 15%;
+
+			background: #F57F17;
+			border-radius: 30px;
+			color: #FFFFFF;
+			font-weight: 300;
+			font-size: 25px;
+			line-height: 29px;
+			text-align: center;
+			border: none;
+
+			cursor: pointer;
+		}
+
+		.submitbutton:hover {
+			background: #FBC02D;
+		}
+
+		.gridcontainer {
+			/*top: 50px;*/
+			position: relative;
+			/*max-width: 1170px;*/
+			max-width: 81.25vw;
+			margin: 0 auto;
+			display: grid;
+			grid-gap: 1rem;
+			/*margin-left: 60px;*/
+			top: 200px;
+		}
+
+		.card {
+			/*background-color: dodgerblue;*/
+			color: white;
+			padding: 1rem;
+			height: 20rem;
+			float: center;
+			text-align: center;
+			vertical-align: middle;
+
+
+		}
+
+		.bottomcard {
+			position: relative;
+			background-color: #FDDF96;
+			width: 100%;
+			height: 40%;
+			top: -10px;
+			padding-top: 20px;
+			font-size: 20px;
+			line-height: 23px;
+			border-radius: 0px 0px 10px 10px; 
+			color: #000000;
+
+			box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+		}
+
+		.learnmorebutton {
+			position: relative;
+			width: 130px;
+			height: 40px;
+
+			background: #FFFFFF;
+			border: 1px solid #F57F17;
+			box-sizing: border-box;
+			text-align: center;
+			font-weight: 300;
+			font-size: 18px;
+			line-height: 21px;
+			text-align: center;
+
+			color: #F57F17;
+			padding-top: 8px;
+			/*left: 25%;*/
+			margin: 0 auto;
+			top: 10px;
+			cursor: pointer;
+		}
+
+		.learnmorebutton:hover {
+			color: #FFFFFF;
+			background: #F57F17;
+			/*border: 1px solid #FFFFFF;*/
+		}
+
+		@media (min-width: 0px) {
+			.gridcontainer { 
+				grid-template-columns: repeat(1, 1fr); 
+				max-width: 68vw;
+			}
+			.card {
+				margin-top: 100px;
+				height: 20rem;
+			}
+
+
+		}
+
+
+		@media (min-width: 700px) {
+			.gridcontainer { 
+				grid-template-columns: repeat(2, 1fr);
+				max-width: 81.25vw; 
+			}
+			.card {
+				margin-top: 40px;
+				height: 21rem;
+			}
+		}
+
+		/*@media only screen and (max-width: 850px)  {
+			.vtopnav {
+				top: 100px;
+			}
+			.vtopnav a {
+				float: center;
+			}
+		}*/
+
+		@media (min-width: 1000px) {
+			.gridcontainer { 
+				grid-template-columns: repeat(3, 1fr); 
+				max-width: 81.25vw;
+			}
+			.card {
+				height: 22rem;
+			}
+		}
+
+		@media (min-width: 1200px) {
+			.gridcontainer { 
+				grid-template-columns: repeat(4, 1fr); 
+				max-width: 81.25vw;
+			}
+			.card {
+				height: 20rem;
+			}
+		}
+
+	</style>
+</head>
+
+<body>
+
+	<div class="titletxt"> VOLUNTEER OPPORTUNITIES </div>
+
+
+	<div class="vtopnav"> 
+		<button class="loginbut" id="loginBtn"> Log in</button>
+		<a href="{% url 'business-login' %}"> Business </a>
+		<a href="{% url 'npo-login' %}"> Nonprofits</a>
+   		<a href="{% url 'vol-login' %}"> Volunteers</a>
+
+	</div>
+
+
+	<!-- First Modal -->
+	<div id="myModal" class="modal">
+
+		<div class="modal-content">
+			<span class="close" id="mainClose"> &times; </span>
+			<h1 class="loginbigtxt"> Login | Signup </h1>
+			<p class="loginsmalltxt">In order to register for this opportunity, please log in to an existing account or register to create a new account.</p> <br> <br> 
+
+			<div class="row"> 
+				<div class="twocolumn" > 
+					<button class="logindirectbutton" onclick="openLogin();"> Login </button> 
+				</div>
+				<div class="twocolumn" > 
+					<button class="signupdirectbutton" onclick="openSignup()"> Signup </button> 
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<!-- Login Modal -->
+	<div id="loginModal" class="modal">
+		<div class="modal-content" style="width: 35%">
+			<span class="close" id="loginClose"> &times; </span>
+			<h1 class="loginbigtxt"> Login </h1> <br> 
+
+			<label for="email" class="labeltxt">Email Address</label>
+			<input type="text" class="txtinput" name="email" required> <br>
+
+			<label for="psw" class="labeltxt"> Password </label>
+			<input type="password" class="txtinput" placeholder="Enter Password" name="psw" required>
+
+			 <div class="forgetpassword" > <a href="#forgetpass" style="text-decoration: none; color: #F57F17;" class="forpassid"> Forget Password? </a> </div> <br> <br> <br>
+
+			<button type="submit" class="enterbutton" style="background: #F57F17"> LOGIN </button> <br>
+
+		</div>
+	</div>
+
+
+	<!-- Signup Modal -->
+	<div id="signupModal" class="modal">
+		<div class="modal-content" style="width: 40%">
+			<span class="close" id="signupClose"> &times; </span>
+			<h1 class="loginbigtxt"> Signup </h1> <br> 
+
+			<label for="email" class="labeltxt">Email Address</label>
+			<input type="text" class="txtinput" name="email" required> <br>
+
+			<label for="psw" class="labeltxt"> Password </label> 
+			<input type="password" class="txtinput" placeholder="Enter Password" name="psw" required> <br>
+
+			<label for="psw" class="labeltxt" > Confirm Password </label>
+	    	<input type="password" class="txtinput" placeholder="Enter Password" name="psw" required><br> <br> <br>
+
+			<button type="submit" class="enterbutton" style="background: #4CB9B2"> SIGNUP </button> <br>
+
+		</div>
+	</div>
+
+
+
+
+
+
+		<div class="findbox"> 
+			<div class="findtxt"> Find Volunteer Opportunities </div>
+			<div class="subfindtxt"> Filter by Cause Area(s):  </div>
+
+			<div class="iconbox"> 
+				<div class="iconrow">
+					<div class="iconcolumn">
+						<a href="#filter" style="text-decoration: none; color: #000000"> 
+							<div class="filtericon"> 
+								<img src="filters/animals.png" style="margin: 0 auto; margin-top: 12px;">
+							</div>
+							<div class="filtertxt"> Animals </div>
+						</a>
+					</div>
+					<div class="iconcolumn">
+						<div class="filtericon"> 
+							<img src="filters/art.png" style="margin: 0 auto; margin-top: 12px;">
+						</div>
+						<div class="filtertxt"> Arts & Music </div>
+					</div>
+					<div class="iconcolumn">
+						<div class="filtericon"> 
+							<img src="filters/education.png" style="margin: 0 auto; margin-top: 12px;">
+						</div>
+						<div class="filtertxt"> Education & Literacy </div>
+					</div>
+					<div class="iconcolumn">
+						<div class="filtericon"> 
+							<img src="filters/environment.png" style="margin-left: -3px; margin-top: 8px;">
+						</div>
+						<div class="filtertxt"> Environment  </div>
+					</div>
+					<div class="iconcolumn">
+						<div class="filtericon"> 
+							<img src="filters/health.png" style="margin: 0 auto; margin-top: 12px;">
+						</div>
+						<div class="filtertxt"> Health & Medicine </div>
+					</div>
+					<div class="iconcolumn">
+						<div class="filtericon"> 
+							<img src="filters/justice.png" style="margin: 0 auto; margin-top: 12px;">
+						</div>
+						<div class="filtertxt"> Justice & Legal </div>
+					</div>
+					<div class="iconcolumn">
+						<div class="filtericon"> 
+							<img src="filters/more.png" style="margin: 0 auto; margin-top: 25px;">
+						</div>
+						<div class="filtertxt"> More </div>
+					</div>
+
+				</div>
+			</div>
+
+
+			<!-- OR -->
+			<hr class="horline">
+			<div class="ortxt"> OR </div>
+
+			<!-- Search -->
+			<div class="subfindtxt" style="width: 364px;"> Search by Keyword, Skill, or Interest:  </div>
+
+
+			<div class="searchcontainer"> 
+				<form action="/action_page.php">
+					<input type="text" placeholder="Animals, Red Cross, Food" name="search" class="searchbar" >
+
+					<button type="submit" class="submitbutton">Submit</button>
+				</form>
+			</div>
+
+		</div>
+
+
+
+		
+		<!-- cards -->
+		<div class="gridcontainer"> 
+
+			<div class="card">
+				<img src="logos/volunteer1.png" style="width: 100%; border-radius: 10px 10px 0px 0px; box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);"> 
+				<div class="bottomcard"> 
+					<!-- Food Bank Volunteer <br> 
+					<a href="#page" style="font-weight: 300; font-size: 20px; line-height: 23px; text-align: center; color: #000000"> Learn More </a> -->
+				 
+					Food Bank Volunteer <br> 
+					<a href="updateddescription.html" style="text-decoration: none;"> 
+						<div class="learnmorebutton"> Learn More </div> 
+					</a>
+				
+				</div>
+			</div>
+
+			<div class="card">
+				<img src="logos/volunteer2.png " style="width: 100%; border-radius: 10px 10px 0px 0px; box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);"> 
+				<div class="bottomcard"> 
+					Animal Rescue Volunteer <br> 
+					<div class="learnmorebutton"> Learn More </div>
+				</div>
+			</div>
+
+			<div class="card">
+				<img src="logos/volunteer3.png" style="width: 100%; border-radius: 10px 10px 0px 0px; box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);"> 
+				<div class="bottomcard"> 
+					Red Cross Volunteer <br> 
+					<div class="learnmorebutton"> Learn More </div>
+				</div>
+			</div>
+
+			<div class="card">
+				<img src="logos/volunteer4.png" style="width: 100%; border-radius: 10px 10px 0px 0px; box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);"> 
+				<div class="bottomcard"> 
+					Pickup Food Donation <br> 
+					<div class="learnmorebutton"> Learn More </div>
+				</div>
+			</div>
+
+			<div class="card">
+				<img src="logos/volunteer1.png" style="width: 100%; border-radius: 10px 10px 0px 0px; box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);"> 
+				<div class="bottomcard"> 
+					Food Bank Volunteer <br> 
+					<div class="learnmorebutton"> Learn More </div>
+				</div>
+			</div>
+
+			<div class="card">
+				<img src="logos/volunteer2.png " style="width: 100%; border-radius: 10px 10px 0px 0px; box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);"> 
+				<div class="bottomcard"> 
+					Animal Rescue Volunteer <br> 
+					<div class="learnmorebutton"> Learn More </div>
+				</div>
+			</div>
+
+			<div class="card">
+				<img src="logos/volunteer3.png" style="width: 100%; border-radius: 10px 10px 0px 0px; box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);"> 
+				<div class="bottomcard"> 
+					Red Cross Volunteer <br> 
+					<div class="learnmorebutton"> Learn More </div>
+				</div>
+			</div>
+
+			<div class="card">
+				<img src="logos/volunteer4.png" style="width: 100%; border-radius: 10px 10px 0px 0px; box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);"> 
+				<div class="bottomcard"> 
+					Pickup Food Donation <br> 
+					<div class="learnmorebutton"> Learn More </div>
+				</div>
+			</div>
+
+			<div class="card">
+				<img src="logos/volunteer1.png" style="width: 100%; border-radius: 10px 10px 0px 0px; box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);"> 
+				<div class="bottomcard"> 
+					Food Bank Volunteer <br> 
+					<div class="learnmorebutton"> Learn More </div>
+				</div>
+			</div>
+
+			<div class="card">
+				<img src="logos/volunteer2.png" style="width: 100%; border-radius: 10px 10px 0px 0px; box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);"> 
+				<div class="bottomcard"> 
+					Animal Rescue Volunteer <br> 
+					<div class="learnmorebutton"> Learn More </div>
+				</div>
+			</div>
+
+			<div class="card">
+				<img src="logos/volunteer3.png" style="width: 100%; border-radius: 10px 10px 0px 0px; box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);"> 
+				<div class="bottomcard"> 
+					Red Cross Volunteer <br> 
+					<div class="learnmorebutton"> Learn More </div>
+				</div>
+			</div>
+
+			<div class="card">
+				<img src="logos/volunteer4.png" style="width: 100%; border-radius: 10px 10px 0px 0px; box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);"> 
+				<div class="bottomcard"> 
+					Pickup Food Donation <br> 
+					<div class="learnmorebutton"> Learn More </div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+<script language = "javascript" type="text/javascript">
+
+// Getting Main Modal
+var mainMod = document.getElementById("myModal");
+var mainSpan = document.getElementById("mainClose");
+
+// Get the button that opens the main modal
+var mainbtn = document.getElementById("loginBtn");
+
+// When the user clicks the button, open the modal 
+mainbtn.onclick = function() {
+	mainMod.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+mainSpan.onclick = function() {
+	mainMod.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+	if (event.target == mainMod) {
+		mainMod.style.display = "none";
+  	}
+} 
+
+// Rest of Modals
+// Getting Login Modal
+var logMod = document.getElementById("loginModal");
+var logSpan = document.getElementById("loginClose");
+
+// Function called when Login Button is pressed from main modal
+function openLogin() {
+	logMod.style.display = "block";
+	mainMod.style.display = "none";
+}
+
+logSpan.onclick = function() {
+	logMod.style.display = "none";
+}
+
+window.onclick = function (event) {
+	if (event.target == logMod) {
+		logMod.style.display = "none";
+	}
+}
+
+// Getting Signup Modal
+var signMod = document.getElementById("signupModal");
+var signSpan = document.getElementById("signupClose");
+
+// Function called when Login Button is pressed from main modal
+function openSignup() {
+	signMod.style.display = "block";
+	mainMod.style.display = "none";
+}
+
+signSpan.onclick = function() {
+	signMod.style.display = "none";
+}
+
+window.onclick = function (event) {
+	if (event.target == signMod) {
+		signMod.style.display = "none";
+	}
+}
+
+
+
+</script>
+
+</body>
+
+
+
+</html>
