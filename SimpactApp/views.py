@@ -29,5 +29,11 @@ def volunteerDashboard(request):
 
 
 
+def testPath(request):
+    return HttpResponse('<h1> hello testing <h1>')
+
+
+
+
 
 # Create your views here.
