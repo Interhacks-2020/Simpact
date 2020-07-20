@@ -19,6 +19,11 @@ def volunteerDescription(request):
 
 
 
+def volunteerDashboard(request):
+	return render( request, 'SimpactApp/volunteerdashboard.html')
+
+
+
 
 
 
