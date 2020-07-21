@@ -8,5 +8,7 @@ urlpatterns = [
     path('volLogin', views.volLogin, name='vol-login'),
     path('about', views.simpactAbout, name='simpact-about'),
     
+    path('opps/', views.all_events, name='show-events'),
+    
     #path('', views.InsertPerks)
 ]
