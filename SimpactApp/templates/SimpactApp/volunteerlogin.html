@@ -699,7 +699,9 @@
 
 			 <div class="forgetpassword" > <a href="#forgetpass" style="text-decoration: none; color: #F57F17;" class="forpassid"> Forget Password? </a> </div> <br> <br> <br>
 
-			<button type="submit" class="enterbutton" style="background: #F57F17"> LOGIN </button> <br>
+			<button type="submit" class="enterbutton" style="background: #F57F17"> 
+				<a href="{% url 'volunteer-dashboard' %}"> LOGIN</a>
+			</button> <br>
 
 		</div>
 	</div>
@@ -816,7 +818,7 @@
 					<a href="#page" style="font-weight: 300; font-size: 20px; line-height: 23px; text-align: center; color: #000000"> Learn More </a> -->
 				 
 					Food Bank Volunteer <br> 
-					<a href="updateddescription.html" style="text-decoration: none;"> 
+					<a href= "{% url 'volunteer-description' %}" style="text-decoration: none;"> 
 						<div class="learnmorebutton"> Learn More </div> 
 					</a>
 				

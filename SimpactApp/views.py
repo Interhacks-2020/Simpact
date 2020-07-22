@@ -18,6 +18,18 @@ def volLogin(request):
 def simpactAbout(request):
     return HttpResponse('<h1> this is the about page <h1>')
 
+def volunteerDescription(request):
+	return render( request, 'SimpactApp/volunteerdescription.html')
+
+
+
+def volunteerDashboard(request):
+	return render( request, 'SimpactApp/volunteerdashboard.html')
+
+
+
+
+
 
 def testPath(request):
     return HttpResponse('<h1> hello testing <h1>')
