@@ -10,6 +10,8 @@ from ..decorators import business_required
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 
+from ..forms import BusinessSignUpForm
+
 from django.contrib.auth.forms import UserCreationForm
 from ..models import User
 from django.contrib.auth import get_user_model
@@ -45,7 +47,7 @@ def index(request):
     return render(request,'SimpactApp/index.html')
 def sign_up(request):
     context = {}
-    form = UserCreationForm(request.POST or None)
+    form = BusinessSignUpForm(request.POST or None)
     if request.method == "POST":
         if form.is_valid():
             user = form.save()
