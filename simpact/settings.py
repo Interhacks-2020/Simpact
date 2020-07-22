@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'simpact.wsgi.application'
 DATABASES = {
     'default': {
 #       before was this
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
 #       changed to mysql database
-        'ENGINE': 'django.db.backends.sqlite3',
+#        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': 'perksdb',
 #        'USER': 'root',
 #        'PASSWORD': '',

@@ -11,5 +11,7 @@ urlpatterns = [
     path('volunteerDashboard' , views.volunteerDashboard, name='volunteer-dashboard')
     
     
+    path('opps/', views.all_events, name='show-events'),
+    
     #path('', views.InsertPerks)
 ]
