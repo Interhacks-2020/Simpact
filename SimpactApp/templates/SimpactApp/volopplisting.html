@@ -1,0 +1,28 @@
+{% extends 'volopplistingbase.html' %}
+
+{% block title %}{{ "Volunteer: Opportunities" }}{% endblock title %}
+
+
+{% block voloppcontent %}
+		<!-- <h1>All VolOpps in Database</h1>
+		<ul>
+			{% for volopp in volopp_list %}
+				<li>{{ volopp.vol_title }}</li>
+			{% endfor %}
+		</ul> -->
+
+	{% for volopp in volopp_list %}
+		<div class="card">
+			<img src="{{ volopp.vol_photo }}" style="width: 100%; border-radius: 10px 10px 0px 0px; box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);"> 
+
+			<div class="bottomcard"> 
+				{{ volopp.vol_title }}
+				<br> 
+				<a href="#new" style="text-decoration: none;"> 
+					<div class="learnmorebutton"> Learn More </div> 
+				</a>
+			</div>
+		</div>
+	{% endfor %}
+
+{% endblock voloppcontent %}
