@@ -52,7 +52,7 @@ def sign_up(request):
         if form.is_valid():
             user = form.save()
             login(request,user)
-            return render(request,'SimpactApp/index.htmll')
+            return render(request,'SimpactApp/index.html')
     context['form']=form
     return render(request,'businesslogin.html',context)
 

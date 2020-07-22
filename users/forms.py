@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction 
 from django.forms.utils import ValidationError
 
-from users.models import Volunteer, User
+from users.models import Business, Volunteer, User
 
 '''
 class VolunteerSignUpForm(UserCreationForm):
@@ -27,8 +27,8 @@ class VolunteerSignUpForm(UserCreationForm):
         return user
 '''
 class BusinessSignUpForm(UserCreationForm):
-    first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
-    last_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
+    first_name = forms.CharField(max_length=30, required=True)
+    last_name = forms.CharField(max_length=30, required=True)
     email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
     username = None
 
@@ -38,11 +38,10 @@ class BusinessSignUpForm(UserCreationForm):
 
     @transaction.atomic
     def save(self):
-        user = super().sav(commit = False)
+        user = super().save(commit = False)
         user.is_business = True
         user.save()
         business = Business.objects.create(user = user)
-        business.interests.add(*self.cleaned_data.get('interests'))
         return user
 
 
