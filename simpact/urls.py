@@ -30,5 +30,7 @@ urlpatterns = [
     #path('register/volunteer', volunteer.VolunteerSignUpView.as_view(), name = 'volunteer_signup'),
     #path('register/business', business.BusinessSignUpView.as_view(), name = 'business_signup'),
     path('', include('SimpactApp.urls')),
+    path('', include('users.urls')),
     path('about', simpact_views.simpactAbout, name='simpact-about'),
+    path('accounts/', include('django.contrib.auth.urls'))
 ]

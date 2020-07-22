@@ -1,7 +1,7 @@
 from django.contrib.auth import REDIRECT_FIELD_NAME
 from django.contrib.auth.decorators import user_passes_test
 
-def volunteer_required(function = None, redirect_field_name = REDIRECT_FIELD_NAME, login_url = 'login')
+def volunteer_required(function = None, redirect_field_name = REDIRECT_FIELD_NAME, login_url = 'login'):
     actual_decorator = user_passes_test(
         lambda u: u.is_active and u.is_volunteer,
         login_url = login_url,
@@ -12,7 +12,7 @@ def volunteer_required(function = None, redirect_field_name = REDIRECT_FIELD_NAM
         return actual_decorator(function)
     return actual_decorator
 
-def business_required(function = None, redirect_field_name = REDIRECT_FIELD_NAME, login_url = 'login')
+def business_required(function = None, redirect_field_name = REDIRECT_FIELD_NAME, login_url = 'login'):
     actual_decorator = user_passes_test(
         lambda u: u.is_active and u.is_business,
         login_url = login_url,

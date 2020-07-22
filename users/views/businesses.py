@@ -10,8 +10,19 @@ from ..decorators import business_required
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 
-from ..forms import BusinessSignUpForm, CompanyPerks
+from django.contrib.auth.forms import UserCreationForm
 from ..models import User
+from django.contrib.auth import get_user_model
+User = get_user_model()
+#from django.contrib.auth.models import User
+#from ..forms import BusinessSignUpForm
+
+'''
+from ..forms import BusinessSignUpForm, CompanyPerks
+
+from django.contrib.auth import get_user_model
+User = get_user_model()
+
 
 class BusinessSignupView(CreateView):
     model = User
@@ -28,9 +39,41 @@ class BusinessSignupView(CreateView):
         user = form.save()
         login(self.request, user)
         return redirect('business:dashboard')
+'''
+@login_required
+def index(request):
+    return render(request,'SimpactApp/index.html')
+def sign_up(request):
+    context = {}
+    form = UserCreationForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            user = form.save()
+            login(request,user)
+            return render(request,'SimpactApp/index.htmll')
+    context['form']=form
+    return render(request,'businesslogin.html',context)
 
 '''
+@login_required
+def index(request):
+    return render(request,'SimpactApp/index.html')
+def sign_up(request):
+    if request.method == "POST":
+        form = BusinessSignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = None
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(password=raw_password)
+            login(request, user)
+            return redirect('index.html')
+        else:
+            form = BusinessSignUpForm()
+        return render(request, 'businesslogin.html', {'form': form})
+'''
 
+'''
 @method_decorator([login_required, business_required], name = 'dispatch')
 class BusinessDashboardView(UpdateView):
     model = Business

@@ -1,11 +1,12 @@
+
 from django import forms 
 from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction 
 from django.forms.utils import ValidationError
 
-from Users.models import Volunteer, Subject, User
+from users.models import Volunteer, User
 
-
+'''
 class VolunteerSignUpForm(UserCreationForm):
     interests = forms.ModelMultipleChoiceField(
         queryset = Subject.objects.all(),
@@ -24,17 +25,17 @@ class VolunteerSignUpForm(UserCreationForm):
         volunteer = Volunteer.objects.create(user = user)
         student.interests.add(*self.cleaned_data.get('interests'))
         return user
-
+'''
 class BusinessSignUpForm(UserCreationForm):
-    interests = forms.ModelMultipleChoiceField(
-        queryset = Subject.objects.all(),
-        widget = forms.CheckboxSelectMultiple
-        required = True
-    )
+    first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
+    last_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
+    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
+    username = None
 
     class Meta(UserCreationForm.Meta):
         model = User
-    
+        fields = ('first_name', 'last_name', 'email', 'password1', 'password2', )
+
     @transaction.atomic
     def save(self):
         user = super().sav(commit = False)
@@ -44,8 +45,8 @@ class BusinessSignUpForm(UserCreationForm):
         business.interests.add(*self.cleaned_data.get('interests'))
         return user
 
-'''
 
+'''
 class NgoSignUpForm(UserCreationForm):
     interests = forms.ModelMultipleChoiceField(
         queryset = Subject.objects.all(),
