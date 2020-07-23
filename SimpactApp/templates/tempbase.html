@@ -19,7 +19,7 @@
 <body>
 	<!-- Beginning of Navbar -->
 	<div class="sidenavbar"> 
-		<a href="#home" > 
+		<a href="{% url 'npo-dash' %}" > 
 		   	<!-- <svg xmlns="../navbar/home.svg" class="homesvg"> </svg>  -->
 		   	<svg width="51" height="46" viewBox="0 0 51 46" fill="none" xmlns="http://www.w3.org/2000/svg" class="homesvg">
 				<path fill-rule="evenodd" clip-rule="evenodd" d="M25.7195 0.246109C25.3429 -0.0820375 24.782 -0.082036 24.4055 0.246111L0.345004 21.2144C-0.351854 21.8217 0.0776593 22.9682 1.00201 22.9682H4.48478V44.8491C4.48478 45.1253 4.70864 45.3491 4.98478 45.3491H45.1383C45.4145 45.3491 45.6383 45.1253 45.6383 44.8491V22.9682H49.1229C50.0473 22.9682 50.4768 21.8216 49.7799 21.2144L25.7195 0.246109Z" fill="white" class="homesvgpath"/>
@@ -34,7 +34,7 @@
         </a>
 
 
-        <a href="#promote"> 
+        <a href="{% url 'add-volopp' %}"> 
             <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="promotesvg">
 				<path fill-rule="evenodd" clip-rule="evenodd" d="M25 0C22.791 0 21 1.79089 21 4V21H4C1.79102 21 0 22.7909 0 25C0 27.2091 1.79102 29 4 29H21V46C21 48.2091 22.791 50 25 50C27.209 50 29 48.2091 29 46V29H46C48.209 29 50 27.2091 50 25C50 22.7909 48.209 21 46 21H29V4C29 1.79089 27.209 0 25 0Z" fill="white" class="promotesvgpath"/>
 			</svg>
@@ -61,9 +61,10 @@
 		</svg>
 
 		<div class="dropdown">
-			<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="usericon">
+			<!-- <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="usericon">
 				<circle cx="20" cy="20" r="19.5" fill="url(#pattern0)" stroke="#FBC02D"/>
-			</svg>
+			</svg> -->
+			<img src="{% static 'npoicon.png' %}" class="usericon">
 
 			<ul class="dropdown-content">
 				<li style = "color: black; font-weight: bold; padding: 12px 16px; text-decoration: none; display: block;"> Hello 
@@ -74,6 +75,7 @@
 				</li>
 				<li><a href="#"> DASHBOARD </a></li>
 				<li><a href="#"> EDIT PROFILE </a></li>
+				<li><a href="#"> LOG OUT </a></li>
 			</ul>
 		</div>
 
@@ -96,6 +98,7 @@
         	</div>
    		</div>
 	
+
 
 	 	<div class="boxtemplate">
         	<div class="headertxttemplate"> 

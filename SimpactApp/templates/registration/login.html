@@ -56,15 +56,17 @@
 					<!-- <div class="labeltxt" style="top: 60px"> {{ form.email.label_tag }}</div>
 					<div class="txtinput"> {{ form.email }}  -->
 
-	    			<label for="id_username" class="labeltxt" style="top: 60px">Email:</label>
-					<input type="text" name="username" maxlength="254" autofocus="" required="" id="id_email" class="txtinput" style="top: 60px"><br> 
+	    			<label for="id_username" class="labeltxt" style="top: 100px">Email:</label>
+					<input type="text" name="username" maxlength="254" autofocus="" required="" id="id_email" class="txtinput" style="top: 100px" placeholder="Enter Email"><br> 
 					<!-- <span class="helptext">Required. Inform a valid email address.</span><br> -->
 
 
-					<label for="id_password" class="labeltxt" style="top: 60px">Password:</label>
-					<input type="password" name="password" autocomplete="current-password" required="" id="id_password" class="txtinput" placeholder="Enter Password" style="top: 60px">
+					<label for="id_password" class="labeltxt" style="top: 100px">Password:</label>
+					<input type="password" name="password" autocomplete="current-password" required="" id="id_password" class="txtinput" placeholder="Enter Password" style="top: 100px">
 
-					<input type="submit" value="Login" class="enterbutton" style="background: #4CB9B2; top: 130px">
+					<div class="forgetpassword" style="top: 110px" > <a href="#forgetpass" style="text-decoration: none; color: #F57F17;" class="forpassid" > Forget Password? </a> </div>
+
+					<input type="submit" value="Login" class="enterbutton" style="background: #4CB9B2; top: 200px">
 	    			<!-- <button type="submit" value = "Sign up" class="enterbutton" style="background: #4CB9B2; top: 130px" > SIGNUP </button> -->
 					
 				</div>
@@ -86,23 +88,23 @@
 					
 
 					<label for="id_username" class="labeltxt" style="top: 60px">Email:</label>
-					<input type="text" name="username" maxlength="254" autofocus="" required="" id="id_email" class="txtinput" style="top: 60px"><br> 
+					<input type="text" name="username" maxlength="254" autofocus="" required="" id="id_email" class="txtinput" style="top: 60px" placeholder="Enter Email">
 					<br>
 
 					<label for="id_password" class="labeltxt" style="top: 60px">Password:</label>
-					<input type="password" name="password" autocomplete="current-password" required="" id="id_password" class="txtinput" placeholder="Enter Password" style="top: 60px">
+					<input type="password" name="password" autocomplete="current-password" required="" id="id_password" class="txtinput" placeholder="Enter Password" style="top: 60px"> <br>
 
 
 					<!-- <label for="id_password1" class="labeltxt">Password:</label>
 					<input type="password" name="password1" autocomplete="new-password" required="" id="id_password1" class="txtinput" placeholder="Enter Password">
-					<span class="helptext"></span>
+					<span class="helptext"></span> -->
 
-					<label for="id_password2" class="labeltxt">Password confirmation:</label>
-					<input type="password" name="password2" autocomplete="new-password" required="" id="id_password2" class="txtinput">  -->
-	    			 <div class="forgetpassword" > <a href="#forgetpass" style="text-decoration: none; color: #F57F17;" class="forpassid"> Forget Password? </a> </div>
+					<label for="id_password2" class="labeltxt" style="top: 60px">Password confirmation:</label>
+					<input type="password" name="password2" autocomplete="new-password" required="" id="id_password2" class="txtinput" style="top: 60px" placeholder="Reenter Password"> 
+	    			 
 					
 					<!-- <input type="hidden" name="next" value="/index.html"> -->
-					<input type="submit" value="Sign up">
+					<input type="submit" value="Sign up" class="enterbutton" style="background: #F57F17; top: 130px">
 	    			<!-- <button type="submit" value = "Sign Up" class="enterbutton" style="background: #F57F17"> LOGIN </button> -->
 					
 				</div>

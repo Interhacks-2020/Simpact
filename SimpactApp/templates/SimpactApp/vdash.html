@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+{% load static %}
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<link href="{% static 'vdash.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+	<title> Volunteer Dashboard </title>
+
+</head>
+
+<body>
+
+<!-- Beginning of Navbar -->
+<div class="sidenavbar"> 
+    <a href="#home" > 
+           <!-- <svg xmlns="../navbar/home.svg" class="homesvg"> </svg>  -->
+           <svg width="51" height="46" viewBox="0 0 51 46" fill="none" xmlns="http://www.w3.org/2000/svg" class="homesvg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M25.7195 0.246109C25.3429 -0.0820375 24.782 -0.082036 24.4055 0.246111L0.345004 21.2144C-0.351854 21.8217 0.0776593 22.9682 1.00201 22.9682H4.48478V44.8491C4.48478 45.1253 4.70864 45.3491 4.98478 45.3491H45.1383C45.4145 45.3491 45.6383 45.1253 45.6383 44.8491V22.9682H49.1229C50.0473 22.9682 50.4768 21.8216 49.7799 21.2144L25.7195 0.246109Z" fill="white" class="homesvgpath"/>
+        </svg> 
+
+    </a>
+
+    <a href="#search">
+       <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="searchsvg">
+          <path d="M20.8337 37.4998C24.5315 37.4991 28.1228 36.2612 31.0357 33.9832L40.1941 43.1415L43.1399 40.1957L33.9816 31.0373C36.2607 28.1241 37.4994 24.532 37.5003 20.8332C37.5003 11.6436 30.0232 4.1665 20.8337 4.1665C11.6441 4.1665 4.16699 11.6436 4.16699 20.8332C4.16699 30.0228 11.6441 37.4998 20.8337 37.4998ZM20.8337 8.33317C27.7274 8.33317 33.3337 13.9394 33.3337 20.8332C33.3337 27.7269 27.7274 33.3332 20.8337 33.3332C13.9399 33.3332 8.33366 27.7269 8.33366 20.8332C8.33366 13.9394 13.9399 8.33317 20.8337 8.33317Z" fill="white" class="searchsvgpath"/>
+      </svg>
+    </a>
+
+
+    <a href="#promote"> 
+      <svg width="40" height="42" viewBox="0 0 40 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="promotesvg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M35.8123 21.0002V22.0927L38.5292 24.5795C39.0307 25.0192 39.3637 25.6196 39.4713 26.2778C39.5788 26.9361 39.4541 27.6112 39.1186 28.1877L35.8411 33.9377C35.589 34.3743 35.2265 34.7369 34.79 34.9892C34.3535 35.2416 33.8584 35.3746 33.3542 35.3752C33.0417 35.3776 32.731 35.329 32.4342 35.2314L28.9554 34.0527C28.3474 34.4535 27.7135 34.8137 27.0579 35.1308L26.3248 38.7533C26.1934 39.4151 25.8333 40.0096 25.3077 40.4327C24.7821 40.8558 24.1244 41.0806 23.4498 41.0677H16.6648C15.9902 41.0806 15.3325 40.8558 14.8069 40.4327C14.2813 40.0096 13.9213 39.4151 13.7898 38.7533L13.0567 35.1308C12.4058 34.8136 11.7767 34.4534 11.1736 34.0527L7.68044 35.2314C7.38362 35.329 7.07288 35.3776 6.76044 35.3752C6.25627 35.3746 5.7611 35.2416 5.32461 34.9892C4.88812 34.7369 4.52565 34.3743 4.27356 33.9377L0.881064 28.1877C0.530164 27.6056 0.39683 26.918 0.504724 26.247C0.612618 25.5759 0.954762 24.9648 1.47044 24.522L4.18731 22.107V19.9077L1.47044 17.4208C0.968928 16.9811 0.635894 16.3807 0.528372 15.7225C0.42085 15.0642 0.545532 14.3891 0.881064 13.8127L4.27356 8.06266C4.52565 7.62603 4.88812 7.26338 5.32461 7.01107C5.7611 6.75876 6.25627 6.62567 6.76044 6.62516C7.06975 6.60411 7.38043 6.63324 7.68044 6.71141L11.1017 7.94766C11.7097 7.54681 12.3436 7.18665 12.9992 6.86953L13.7323 3.24703C13.8638 2.58521 14.2238 1.99072 14.7494 1.5676C15.275 1.14449 15.9327 0.919729 16.6073 0.932657H23.3348C24.0094 0.919729 24.6671 1.14449 25.1927 1.5676C25.7183 1.99072 26.0784 2.58521 26.2098 3.24703L26.9429 6.86953C27.5939 7.18672 28.223 7.54689 28.8261 7.94766L32.3192 6.76891C32.616 6.67132 32.9267 6.62276 33.2392 6.62516C33.7434 6.62567 34.2385 6.75876 34.675 7.01107C35.1115 7.26338 35.474 7.62603 35.7261 8.06266L39.1186 13.8127C39.4745 14.3899 39.6149 15.0745 39.5149 15.7452C39.4149 16.416 39.0811 17.0299 38.5723 17.4783L35.8123 19.8933V21.0002ZM28.3086 30.8327L33.2392 32.5002L36.6317 26.7502L32.7217 23.1995C32.9875 21.7115 32.9875 20.1882 32.7217 18.7002L36.6317 15.2502L33.2392 9.50016L28.2942 11.1102C27.136 10.1458 25.824 9.38289 24.4129 8.85328L23.3923 3.75016H16.6073L15.5867 8.91078C14.1644 9.42577 12.8453 10.19 11.6911 11.1677L6.76044 9.50016L3.36794 15.2502L7.27794 18.8008C7.01214 20.2888 7.01214 21.8121 7.27794 23.3002L3.36794 26.7502L6.76044 32.5002L11.7054 30.8902C12.8637 31.8545 14.1757 32.6174 15.5867 33.147L16.6073 38.2502H23.3923L24.4129 33.0895C25.8352 32.5745 27.1543 31.8103 28.3086 30.8327ZM15.2082 28.1714C16.6266 29.1192 18.2941 29.625 20 29.625C21.1359 29.6365 22.2626 29.4213 23.3142 28.992C24.3659 28.5626 25.3213 27.9277 26.1245 27.1245C26.9277 26.3213 27.5626 25.3659 27.992 24.3142C28.4213 23.2626 28.6365 22.1359 28.625 21C28.625 19.2941 28.1192 17.6266 27.1714 16.2082C26.2237 14.7898 24.8767 13.6843 23.3006 13.0315C21.7246 12.3787 19.9904 12.2079 18.3174 12.5407C16.6443 12.8735 15.1074 13.695 13.9012 14.9012C12.695 16.1074 11.8735 17.6443 11.5407 19.3174C11.2079 20.9904 11.3787 22.7246 12.0315 24.3006C12.6843 25.8767 13.7898 27.2237 15.2082 28.1714ZM17.7788 15.6516C18.4844 15.3689 19.2401 15.2323 20 15.25C20.7599 15.2323 21.5156 15.3689 22.2212 15.6516C22.9268 15.9343 23.5678 16.3572 24.1053 16.8947C24.6428 17.4322 25.0657 18.0732 25.3484 18.7788C25.6311 19.4844 25.7677 20.2401 25.75 21C25.7677 21.7599 25.6311 22.5156 25.3484 23.2212C25.0657 23.9268 24.6428 24.5678 24.1053 25.1053C23.5678 25.6428 22.9268 26.0657 22.2212 26.3484C21.5156 26.6311 20.7599 26.7677 20 26.75C19.2401 26.7677 18.4844 26.6311 17.7788 26.3484C17.0732 26.0657 16.4322 25.6428 15.8947 25.1053C15.3572 24.5678 14.9343 23.9268 14.6516 23.2212C14.3689 22.5156 14.2323 21.7599 14.25 21C14.2323 20.2401 14.3689 19.4844 14.6516 18.7788C14.9343 18.0732 15.3572 17.4322 15.8947 16.8947C16.4322 16.3572 17.0732 15.9343 17.7788 15.6516Z" fill="white" class="promotesvgpath"/>
+      </svg>
+    </a>
+
+</div>
+
+<!-- End of Navbar -->
+
+
+<!-- Beginning of Content -->
+<!-- Please include all content inside this div -->
+	<div class="content" style="height: 1500px">
+		<div class="titletxt" style="width: 80%"> VOLUNTEER: HOME </div>
+
+		<svg width="40" height="36" viewBox="0 0 40 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="bellsvg">
+			<ellipse cx="19.5" cy="32.5" rx="7.5" ry="3.5" fill="#454545"/>
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M19.7701 0C21.1688 0 22.3301 1.24618 22.555 2.88207C26.2828 3.54277 32.4195 6.93476 32.9392 16.6154C33.5041 27.1385 37.8818 29.7693 40 29.7693L39.9838 29.7725L39.954 29.7829C37.1053 31.172 28.2201 33.9231 21.1825 33.9231C21.1473 33.9231 21.1167 33.9127 21.0903 33.8929C20.6436 33.9127 20.2031 33.9231 19.7703 33.9231C12.427 33.9231 3.05968 30.9231 0 29.7693C2.11824 29.7693 6.49595 27.1385 7.06081 16.6154C7.55908 7.33306 13.2217 3.83253 16.9732 2.97774C17.1652 1.29501 18.3442 0 19.7701 0Z" fill="#FBC02D"/>
+		</svg>
+
+		<div class="dropdown">
+		<!-- 	<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="usericon">
+				<circle cx="20" cy="20" r="19.5" fill="url(#pattern0)" stroke="#FBC02D"/>
+			</svg> -->
+      <img src='{% static "volicon.svg" %}' class="usericon">
+
+			<ul class="dropdown-content">
+				<li style = "color: black; font-weight: bold; padding: 12px 16px; text-decoration: none; display: block;"> Hello Anju Ishizaki! </li>
+				<li><a href="#"> DASHBOARD </a></li>
+				<li><a href="#"> EDIT PROFILE </a></li>
+        <li><a href="#"> LOG OUT </a></li>
+			</ul>
+		</div>
+
+		<div class="welcomebox"> 
+            <div class="welcomeboxcontainer">
+			<div class="welcometxt"> Welcome Back, Anju Ishizaki! </div>
+            <div class="welcomecontxt"> Track your progress as a volunteer. </div>
+            </div>
+            <img src="{% static 'volunteerhands.svg' %}" class="volunteerhands_img">
+        </div>
+        
+
+    <div class="dashboardcontent">
+		<div class="dashboardbox1">
+            <div class="dashboardboxtitle"> Your Progress </div>
+            <div class="pointconversion">1 HOUR = 1 PT</h3></div>
+            <div class="pointcontainer">
+                <div class="pointchart">
+                     <img src="{% static 'pointchart.svg' %}">
+                 </div>
+            
+            <div class="progresstext">
+                <div class="levelandimg">
+                <div class="pointlevel">Level 3</div>
+                <div class="levelcrown">
+                <img src="{% static 'crown.svg' %}">
+            </div>
+            </div>
+                <div class="pointlevelup">4 PTS TO LEVEL UP</div>
+                     <div class="pointsbuttons">
+                        <button type="submit" class="pbutton" id="redeem">Redeem</button>
+                         <button type="submit" class="pbutton" id="earnhours">Earn Hours</button>
+            </div>
+        </div>
+        </div>
+        </div>
+        <div class="dashboardbox2">
+            <div class="dashboardboxtitle"> Your Top Cause Areas </div>
+            <div class="topcauses">
+                <div class="educationcause">
+                    <img src ="{% static 'education.svg' %}">
+                    <h2 class="causetext">Education and literacy</h2>
+                </div>
+                <div class="animalscause">
+                    <img src= "{% static 'animals.svg' %}">
+                    <h2 class="causetext">Animals</h2>
+                </div>
+                <div class="environmentcause">
+                <img src= "{% static 'environment.svg' %}">
+                <h2 class="causetext">Environment</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="perksredeemed">
+        <div class="dashboardboxtitle">Perks Redeemed</div>
+        <table class="redemptiontable">
+            <tr>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Perk Redeemed</th>
+              <th>Point Balance</th>
+            </tr>
+            <tr>
+              <td>06 Jul 2020</td>
+              <td>Carvel</td>
+              <td>Kiddie Size Ice Cream</td>
+              <td class="pointbalance">21 PTS</td>
+            </tr>
+            <tr>
+              <td>01 Jul 2020</td>
+              <td>Starbucks</td>
+              <td>Short Frappucino</td>
+              <td class="pointbalance">24 PTS</td>
+            </tr>
+            <tr>
+              <td>17 Jun 2020</td>
+              <td>Panera Bread</td>
+              <td>Small Bagel</td>
+              <td class="pointbalance">26 PTS</td>
+            </tr>
+            <tr>
+                <td>04 Jun 2020</td>
+                <td>Dairy Queen</td>
+                <td>Kiddie Size Milkshake</td>
+                <td class="pointbalance">29 PTS</td>
+            </tr>
+            <tr>
+                <td>02 Jun 2020</td>
+                <td>Starbucks</td>
+                <td>Cake Pop</td>
+                <td class="pointbalance">31 PTS</td>
+            </tr>
+          </table>
+
+    </div>
+	</div>
+
+</body>
+
+
+
+</html>
