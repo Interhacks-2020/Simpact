@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'crispy_forms',
+    'multiselectfield',
+    'django_fields',
+    'django_filters',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -80,16 +84,16 @@ WSGI_APPLICATION = 'simpact.wsgi.application'
 DATABASES = {
     'default': {
 #       before was this
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
 #       changed to mysql database
         'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': 'perksdb',
-#        'USER': 'root',
-#        'PASSWORD': '',
-#        'HOST': 'localhost',
-#        'PORT':'3306',
+        'NAME': 'perksdb',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT':'3306',
 #        'OPTIONS': {
 #            'init_command': "SET sql_mode = 'STRICT_TRANS_TABLES'"
         }
@@ -98,20 +102,23 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
+AUTHENTICATION_BACKENDS = (
+    ('django.contrib.auth.backends.ModelBackend'),
+)
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    # {
+    #     'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    # },
+    # {
+    #     'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    # },
+    # {
+    #     'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    # },
+    # {
+    #     'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    # },
 ]
 
 
@@ -137,3 +144,6 @@ STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'users.User'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'imgs')
+MEDIA_URL = '/imgs/'
+#DEFAULT_IMAGE_PATH = 'voloppimgs/default.png'

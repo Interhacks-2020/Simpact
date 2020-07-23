@@ -33,4 +33,5 @@ urlpatterns = [
     path('', include('users.urls')),
     path('about', simpact_views.simpactAbout, name='simpact-about'),
     path('accounts/', include('django.contrib.auth.urls'))
+   
 ]

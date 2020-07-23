@@ -9,10 +9,16 @@ from django.db.models import Count
 from ..decorators import business_required
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
+from django.views.generic.edit import UpdateView
+
+from ..forms import BusinessSignUpForm
 
 from django.contrib.auth.forms import UserCreationForm
-from ..models import User
+from ..models import User, Business
 from django.contrib.auth import get_user_model
+from django.contrib.auth import logout
+from django.contrib import messages
+
 User = get_user_model()
 #from django.contrib.auth.models import User
 #from ..forms import BusinessSignUpForm
@@ -43,16 +49,24 @@ class BusinessSignupView(CreateView):
 @login_required
 def index(request):
     return render(request,'SimpactApp/index.html')
+
 def sign_up(request):
     context = {}
-    form = UserCreationForm(request.POST or None)
+    form = BusinessSignUpForm(request.POST or None)
     if request.method == "POST":
         if form.is_valid():
             user = form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
             login(request,user)
-            return render(request,'SimpactApp/index.htmll')
-    context['form']=form
-    return render(request,'businesslogin.html',context)
+            return redirect('home')
+        
+        return render(request,'login.html', {'form': form})
+
+def logout_request(request):
+    logout(request)
+    messages.info(request, "Logged out successfully!")
+    return redirect('home')
 
 '''
 @login_required
@@ -72,6 +86,23 @@ def sign_up(request):
             form = BusinessSignUpForm()
         return render(request, 'businesslogin.html', {'form': form})
 '''
+@login_required
+def index(request):
+    return render(request,'SimpactApp/index.html')
+def sign_up(request):
+    if request.method == "POST":
+        form = BusinessSignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = None
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(password=raw_password)
+            login(request, user)
+            return redirect('index.html')
+        else:
+            form = BusinessSignUpForm()
+        return render(request, 'businesslogin.html', {'form': form})
+
 
 '''
 @method_decorator([login_required, business_required], name = 'dispatch')
@@ -79,18 +110,18 @@ class BusinessDashboardView(UpdateView):
     model = Business
     form_class = BusinessDashboardForm
     template_name = 'templates/users/BDashboard.html'
+'''
 
 
 @login_required
 @business_required
-def business_dashboard(request, pk):
-    dashboard = get_object_or_404(VDashboard, pk = pk)
-    business = request.user.Business
+def business_dashboard(request):
+    business = request.user.is_business
 
-    return render(request, 'users/business/BDashboard.html', {
-        'dashboard' : dashboard
+    return render(request, 'volunteerdashboard.html', {
     })
 
+'''
 def upload_perks(request, pk):
     perksPage = get_object_or_404(perksForm, pk = pk)
     business = request.user.business
