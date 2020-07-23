@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
 <head>
+  {% load static %}
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="smallbusinessdashboard.css">
+    <link rel="stylesheet" type="text/css" href="{% static '/src_business/smallbusinessdashboard.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
 
@@ -15,7 +16,7 @@
 
 <!-- Beginning of Navbar -->
 	<div class="sidenavbar"> 
-		<a href="#home" > 
+		<a href="{% url 'simpact-home' %}" > 
 		   	<!-- <svg xmlns="../navbar/home.svg" class="homesvg"> </svg>  -->
 		   	<svg width="51" height="46" viewBox="0 0 51 46" fill="none" xmlns="http://www.w3.org/2000/svg" class="homesvg">
 				<path fill-rule="evenodd" clip-rule="evenodd" d="M25.7195 0.246109C25.3429 -0.0820375 24.782 -0.082036 24.4055 0.246111L0.345004 21.2144C-0.351854 21.8217 0.0776593 22.9682 1.00201 22.9682H4.48478V44.8491C4.48478 45.1253 4.70864 45.3491 4.98478 45.3491H45.1383C45.4145 45.3491 45.6383 45.1253 45.6383 44.8491V22.9682H49.1229C50.0473 22.9682 50.4768 21.8216 49.7799 21.2144L25.7195 0.246109Z" fill="white" class="homesvgpath"/>
@@ -59,14 +60,15 @@
 			<ul class="dropdown-content">
 				<li style = "color: black; font-weight: bold; padding: 12px 16px; text-decoration: none; display: block;"> Hello Panera Bread!</li>
 				<li><a href="#"> DASHBOARD </a></li>
-				<li><a href="#"> EDIT PROFILE </a></li>
+        <li><a href="#"> EDIT PROFILE </a></li>
+        <li><a href="{% url 'logout' %}"> LOGOUT </a></li>
 			</ul>
 		</div>
 
 		<div class="welcomebox"> 
-            <div class="welcometxt"> Welcome Back, Panera Bread! <br> <span style="font-size: 24px; font-weight: normal">Track your advertisements and create more.</span></div>
+            <div class="welcometxt"> Welcome Back, {{user}} <br> <span style="font-size: 24px; font-weight: normal">Track your advertisements and create more.</span></div>
             <div>
-            <img src="welcomeimg.svg" class="welcome_img">
+            <img src="{% static '/src_business/welcomeimg.svg' %}" class="welcome_img">
         </div>
     </div>
 
@@ -76,7 +78,7 @@
                 <div class="statsbox">
                     <div class="headertext">Total Redeemed</div>
                     <div class="pointsredeemed">
-                        <img src="redeemimg.svg" class="statsimg">
+                        <img src="{% static '/src_business/redeemimg.svg' %}" class="statsimg">
                         <div class="descriptiontext">21</div>
                     </div>
                 </div>
@@ -84,7 +86,7 @@
                 <div class="statsbox">
                     <div class="headertext">Total Redeemed</div>
                     <div class="pointsredeemed">
-                        <img src="purchaseimg.svg" class="statsimg">
+                        <img src="{% static '/src_business/purchaseimg.svg' %}" class="statsimg">
                         <div class="descriptiontext">47</div>
                     </div>
                 </div>
@@ -92,7 +94,7 @@
                 <div class="statsbox">
                     <div class="headertext">Total Redeemed</div>
                     <div class="pointsredeemed">
-                        <img src="perkimg.svg" class="statsimg">
+                        <img src="{% static '/src_business/perkimg.svg' %}" class="statsimg">
                         <div class="descriptiontext">10</div>
                     </div>
                 </div>
@@ -128,11 +130,11 @@
           </div>
 
           <div id="Daily" class="tabcontent">
-            <img src="dailyrevenuegraph.svg">
+            <img src="{% static '/src_business/dailyrevenuegraph.svg' %}">
           </div>
           
           <div id="Monthly" class="tabcontent">
-            <img src="monthlycal.svg">
+            <img src="{% static '/src_business/monthlycal.svg' %}">
           </div>
           
           <div id="Yearly" class="tabcontent">

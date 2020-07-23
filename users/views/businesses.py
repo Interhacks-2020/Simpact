@@ -118,7 +118,7 @@ class BusinessDashboardView(UpdateView):
 def business_dashboard(request):
     business = request.user.is_business
 
-    return render(request, 'volunteerdashboard.html', {
+    return render(request, 'smallbusinessdashboard.html', {
     })
 
 '''
