@@ -26,15 +26,25 @@ class VolunteerSignUpForm(UserCreationForm):
         student.interests.add(*self.cleaned_data.get('interests'))
         return user
 '''
-class BusinessSignUpForm(UserCreationForm):
-    first_name = forms.CharField(max_length=30, required=True)
-    last_name = forms.CharField(max_length=30, required=True)
+
+class LoginForm(UserCreationForm):
     email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
+    password = forms.CharField(widget=forms.PasswordInput)
+
+    class Meta(UserCreationForm.Meta):
+        model = User
+        fields = ('email', 'password')
+
+
+class BusinessSignUpForm(UserCreationForm):
+    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
+    password1 = forms.CharField(widget=forms.PasswordInput)
+    password2 = forms.CharField(widget=forms.PasswordInput)
     username = None
 
     class Meta(UserCreationForm.Meta):
         model = User
-        fields = ('first_name', 'last_name', 'email', 'password1', 'password2', )
+        fields = ('email', 'password1', 'password2')
 
     @transaction.atomic
     def save(self):

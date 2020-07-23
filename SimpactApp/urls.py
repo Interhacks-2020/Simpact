@@ -9,5 +9,6 @@ urlpatterns = [
     path('npodash', views.npoDash, name='npo-dash'),
     path('about', views.simpactAbout, name='simpact-about'),
     
+    
     #path('', views.InsertPerks)
 ]

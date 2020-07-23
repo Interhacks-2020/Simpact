@@ -31,17 +31,12 @@
 <body>
 	{% block content %}
 
-	<!-- <form method="post">
+	<form method="post">
 		{% csrf_token %}
 		{{form.as_p}}
 		<input type="submit" value="Sign up">
-	</form> -->
+	</form> 
 
-	<!-- <form method="post">
-		{% csrf_token %}
-		{{form.as_p}}
-		<input type="submit" value="Login">
-	</form> -->
 	<div class="logincard"> 
 		<div class="row">
 
@@ -58,15 +53,18 @@
 					<label for="email" class="labeltxt" style="top: 60px">Email Address</label>
 	    			<input type="text" class="txtinput" style="top: 60px" name="email" required> <br> -->
 
-	    			<label for="id_email" class="labeltxt" style="top: 60px">Email:</label>
-					<input type="email" name="email" maxlength="254" autofocus="" required="" id="id_email" class="txtinput" style="top: 60px"> 
-					<span class="helptext">Required. Inform a valid email address.</span><br>
+					<!-- <div class="labeltxt" style="top: 60px"> {{ form.email.label_tag }}</div>
+					<div class="txtinput"> {{ form.email }}  -->
+
+	    			<label for="id_username" class="labeltxt" style="top: 60px">Email:</label>
+					<input type="text" name="username" maxlength="254" autofocus="" required="" id="id_email" class="txtinput" style="top: 60px"><br> 
+					<!-- <span class="helptext">Required. Inform a valid email address.</span><br> -->
 
 
-					<label for="id_password1" class="labeltxt" style="top: 60px">Password:</label>
-					<input type="password" name="password1" autocomplete="new-password" required="" id="id_password1" class="txtinput" placeholder="Enter Password" style="top: 60px">
+					<label for="id_password" class="labeltxt" style="top: 60px">Password:</label>
+					<input type="password" name="password" autocomplete="current-password" required="" id="id_password" class="txtinput" placeholder="Enter Password" style="top: 60px">
 
-					<input type="submit" value="Login">
+					<input type="submit" value="Login" class="enterbutton" style="background: #4CB9B2; top: 130px">
 	    			<!-- <button type="submit" value = "Sign up" class="enterbutton" style="background: #4CB9B2; top: 130px" > SIGNUP </button> -->
 					
 				</div>
@@ -86,24 +84,21 @@
 					<div class="bigheadertxt"> SIGNUP </div>
 					<div class="usertagtxt" style="color: #F57F17;"> business </div>
 					
-					<label for="id_first_name" class="labeltxt">First Name:</label>
-					<input type="text" name="first_name" maxlength="30" required="" id="id_first_name" class="txtinput">  <br>
 
-					<label for="id_last_name" class="labeltxt">Last name:</label>
-					<input type="text" name="last_name" maxlength="30" required="" id="id_last_name" class="txtinput">
-					
+					<label for="id_username" class="labeltxt" style="top: 60px">Email:</label>
+					<input type="text" name="username" maxlength="254" autofocus="" required="" id="id_email" class="txtinput" style="top: 60px"><br> 
+					<br>
 
-					<label for="id_email" class="labeltxt">Email:</label>
-					<input type="email" name="email" maxlength="254" autofocus="" required="" id="id_email" class="txtinput"> 
-					<span class="helptext">Required. Inform a valid email address.</span><br>
+					<label for="id_password" class="labeltxt" style="top: 60px">Password:</label>
+					<input type="password" name="password" autocomplete="current-password" required="" id="id_password" class="txtinput" placeholder="Enter Password" style="top: 60px">
 
 
-					<label for="id_password1" class="labeltxt">Password:</label>
+					<!-- <label for="id_password1" class="labeltxt">Password:</label>
 					<input type="password" name="password1" autocomplete="new-password" required="" id="id_password1" class="txtinput" placeholder="Enter Password">
 					<span class="helptext"></span>
 
 					<label for="id_password2" class="labeltxt">Password confirmation:</label>
-					<input type="password" name="password2" autocomplete="new-password" required="" id="id_password2" class="txtinput"> 
+					<input type="password" name="password2" autocomplete="new-password" required="" id="id_password2" class="txtinput">  -->
 	    			 <div class="forgetpassword" > <a href="#forgetpass" style="text-decoration: none; color: #F57F17;" class="forpassid"> Forget Password? </a> </div>
 					
 					<!-- <input type="hidden" name="next" value="/index.html"> -->
