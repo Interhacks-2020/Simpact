@@ -14,6 +14,8 @@ urlpatterns = [
     path('volListing/', views.all_volopps, name='vol-listing'),
     path('add_volopp/', views.add_volopp, name='add-volopp'),
     
+    path('volListing/voloppdescription', views.voloppdescription, name='volopp-description'),
+    
     #path('', views.InsertPerks)
 ]
 

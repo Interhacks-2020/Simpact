@@ -28,6 +28,10 @@ def testPath(request):
     return HttpResponse('<h1> hello testing <h1>')
 
 
+def voloppdescription(request):
+    return render(request, 'SimpactApp/voloppdescription.html')
+
+
 #Add testing
 def add_volopp(request):
     submitted = False
