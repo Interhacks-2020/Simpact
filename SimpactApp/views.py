@@ -29,10 +29,12 @@ def testPath(request):
 def add_volopp(request):
     submitted = False
     if request.method == 'POST':
-        form = VolOppForm(request.POST)
+        form = VolOppForm(request.POST, request.FILES)
         if form.is_valid():
+            form.vol_photo = request.FILES['vol_photo']
             form.save()
-            return HttpResponseRedirect('/add_volopp/?submitted=True')
+#            return HttpResponseRedirect('add_volopp/?submitted=True')
+            return HttpResponseRedirect('/?submitted=True')
     else:
         form = VolOppForm()
         if 'submitted' in request.GET:

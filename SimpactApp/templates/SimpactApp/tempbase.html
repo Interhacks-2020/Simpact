@@ -1,45 +1,102 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
 	<title>
 		{% block title %}
 		{{ page_title|default:"Untitled Page" }}
 		{% endblock title %}
 	</title>
-<!-- 	<link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
- -->
+
+	<link href="{% static 'npoaddvolopp.css' %}" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
-	<div id="wrapper">
-		<header id="header">
-			<div id="logo"><img src="{% static 'logo.png' %}" alt="" /></div>
-			<div id="top_menu">Home | Calendar | About | Contact</div>
-			<div id="topbanner"><img src="{% static 'top_banner.jpg' %}" alt="" /></div>
-		</header>
+	<!-- Beginning of Navbar -->
+	<div class="sidenavbar"> 
+		<a href="#home" > 
+		   	<!-- <svg xmlns="../navbar/home.svg" class="homesvg"> </svg>  -->
+		   	<svg width="51" height="46" viewBox="0 0 51 46" fill="none" xmlns="http://www.w3.org/2000/svg" class="homesvg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M25.7195 0.246109C25.3429 -0.0820375 24.782 -0.082036 24.4055 0.246111L0.345004 21.2144C-0.351854 21.8217 0.0776593 22.9682 1.00201 22.9682H4.48478V44.8491C4.48478 45.1253 4.70864 45.3491 4.98478 45.3491H45.1383C45.4145 45.3491 45.6383 45.1253 45.6383 44.8491V22.9682H49.1229C50.0473 22.9682 50.4768 21.8216 49.7799 21.2144L25.7195 0.246109Z" fill="white" class="homesvgpath"/>
+			</svg> 
 
-		<aside id="rightsidebar">
-			<nav id="nav">
-				<ul>
-					<li>Menu 1</li>
-				<li>Menu 2</li>
-					<li>Menu 3</li>
-	      		</ul>
-			</nav>
-		</aside>
+		</a>
 
-		<section id="main">
-			{% block content %}
-				<p>Placeholder text in base template. Replace with page content.</p>
-			{% endblock content %}
-		</section>
+        <a href="#search">
+            <img src="search.svg" viewBox="0 0 30 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="perkssvg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.9124 0.601861C15.7138 0.312075 15.2862 0.312075 15.0876 0.601861L12.2501 4.74201C12.1851 4.83687 12.0894 4.90643 11.9791 4.93894L7.16475 6.35812C6.82778 6.45745 6.69562 6.86419 6.90985 7.14262L9.97055 11.1205C10.0407 11.2117 10.0773 11.3242 10.0741 11.4392L9.9361 16.4564C9.92644 16.8076 10.2724 17.059 10.6034 16.9413L15.3325 15.2596C15.4408 15.2211 15.5592 15.2211 15.6675 15.2596L20.3966 16.9413C20.7276 17.059 21.0736 16.8076 21.0639 16.4564L20.9259 11.4392C20.9227 11.3242 20.9593 11.2117 21.0294 11.1205L24.0901 7.14262C24.3044 6.86419 24.1722 6.45745 23.8352 6.35812L19.0209 4.93894C18.9106 4.90643 18.8149 4.83687 18.7499 4.74201L15.9124 0.601861ZM4.75011 27.0721C4.43594 26.3701 4.25205 25.6436 4.25205 24.9458C4.25205 22.0099 7.50703 21.4019 10.0234 21.4019C11.5955 21.4019 13.1002 22.8841 14.0081 24.7123C14.2807 24.6366 14.5739 24.5914 14.8841 24.5914C15.1941 24.5914 15.4873 24.6366 15.7597 24.7122C16.6676 22.884 18.1723 21.4019 19.7444 21.4019C22.2608 21.4019 25.5158 22.0099 25.5158 24.9458C25.5158 25.6436 25.3319 26.3701 25.0177 27.0721H29.3549C29.631 27.0721 29.8549 27.296 29.8549 27.5721V34.7786C29.8549 35.0547 29.631 35.2786 29.3549 35.2786H28.4376V49.5001C28.4376 49.7763 28.2137 50.0001 27.9376 50.0001H1.91774C1.64159 50.0001 1.41774 49.7763 1.41774 49.5001V35.2786H0.499999C0.223857 35.2786 0 35.0547 0 34.7786V27.5721C0 27.296 0.223858 27.0721 0.5 27.0721H4.75011ZM22.5909 25.4785C22.5909 26.009 22.3322 26.574 21.9345 27.0721H16.6469C16.6462 27.0508 16.6459 27.0292 16.6459 27.0072C16.6459 25.6001 17.9565 23.7799 19.3636 23.7799C20.7707 23.7799 22.5909 24.0714 22.5909 25.4785ZM13.0789 27.0072C13.0789 27.0292 13.0786 27.0508 13.078 27.0721H7.79034C7.39264 26.574 7.13396 26.009 7.13396 25.4785C7.13396 24.0714 8.9541 23.7799 10.3612 23.7799C11.7684 23.7799 13.0789 25.6001 13.0789 27.0072Z" fill="white" class="perkssvgpath"/>
+        </a>
 
 
-		
+        <a href="#promote"> 
+            <img src="profile.svg" viewBox="0 0 50 41" fill="none" xmlns="http://www.w3.org/2000/svg" class="promotesvg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M35.3771 0L8.84426 10.3183V10.3184H4.42213V13.2666H0V26.533H4.42214L4.42213 29.481H8.59575L12.9079 40.9069L19.7916 40.7622L16.0637 30.6842L35.3771 33.9031V33.8507C37.4547 33.7385 39.1304 26.7771 39.1304 17.5477C39.1304 8.31836 37.4547 0.287602 35.3771 0.158026V0ZM43.4783 16.4608C43.4783 16.1606 43.7216 15.9173 44.0217 15.9173H49.4565C49.7567 15.9173 50 16.1606 50 16.4608C50 16.7609 49.7567 17.0043 49.4565 17.0043H44.0217C43.7216 17.0043 43.4783 16.7609 43.4783 16.4608ZM41.9003 5.21663C41.5712 5.44278 41.4877 5.89295 41.7138 6.22212C41.94 6.55128 42.3902 6.63478 42.7193 6.40863L47.1153 3.38832C47.4445 3.16216 47.528 2.71199 47.3019 2.38283C47.0757 2.05367 46.6255 1.97016 46.2964 2.19631L41.9003 5.21663ZM41.7138 26.296C41.4877 26.6251 41.5712 27.0753 41.9003 27.3014L46.2964 30.3218C46.6255 30.5479 47.0757 30.4644 47.3019 30.1352C47.528 29.8061 47.4445 29.3559 47.1153 29.1298L42.7193 26.1094C42.3902 25.8833 41.94 25.9668 41.7138 26.296Z" fill="white" class="promotesvgpath"/>
+        </a>
+
+
+	</div>
+
+<!-- End of Navbar -->
+
+
+<!-- Beginning of Content -->
+<!-- Please include all content inside this div -->
+	<div class="content">
+		<div class="titletxt" style="width: 80%"> 
+			{% block maintitletxt %}
+				Page Title
+			{% endblock maintitletxt %}
+		</div>
+
+		<svg width="40" height="36" viewBox="0 0 40 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="bellsvg">
+			<ellipse cx="19.5" cy="32.5" rx="7.5" ry="3.5" fill="#454545"/>
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M19.7701 0C21.1688 0 22.3301 1.24618 22.555 2.88207C26.2828 3.54277 32.4195 6.93476 32.9392 16.6154C33.5041 27.1385 37.8818 29.7693 40 29.7693L39.9838 29.7725L39.954 29.7829C37.1053 31.172 28.2201 33.9231 21.1825 33.9231C21.1473 33.9231 21.1167 33.9127 21.0903 33.8929C20.6436 33.9127 20.2031 33.9231 19.7703 33.9231C12.427 33.9231 3.05968 30.9231 0 29.7693C2.11824 29.7693 6.49595 27.1385 7.06081 16.6154C7.55908 7.33306 13.2217 3.83253 16.9732 2.97774C17.1652 1.29501 18.3442 0 19.7701 0Z" fill="#FBC02D"/>
+		</svg>
+
+		<div class="dropdown">
+			<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="usericon">
+				<circle cx="20" cy="20" r="19.5" fill="url(#pattern0)" stroke="#FBC02D"/>
+			</svg>
+
+			<ul class="dropdown-content">
+				<li style = "color: black; font-weight: bold; padding: 12px 16px; text-decoration: none; display: block;"> Hello Panera Bread!</li>
+				<li><a href="#"> DASHBOARD </a></li>
+				<li><a href="#"> EDIT PROFILE </a></li>
+			</ul>
+		</div>
+
+		<div class="welcomebox"> 
+            <div class="welcometxt"> Welcome Back, Panera Bread! <br> <span style="font-size: 24px; font-weight: normal">Track your advertisements and create more.</span></div>
+            <div>
+           		<img src="welcomeimg.svg" class="welcome_img">
+        	</div>
+   		</div>
+	
+
+	 	<div class="boxtemplate">
+        	<div class="headertxttemplate"> 
+        		{% block subtitletxt %}
+					Sub Title
+				{% endblock subtitletxt %}
+    		</div>
+
+			<section id="main">
+				{% block content %}
+					<p>Placeholder text in base template. Replace with page content.</p>
+				{% endblock content %}
+			</section>
+
+		</div>
+	
 	
 	</div>
+
+
 </body>
 
 </html>

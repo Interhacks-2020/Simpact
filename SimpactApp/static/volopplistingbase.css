@@ -123,20 +123,20 @@ body {
 
 /* The Close Button */
 .close {
-color: #000000;
-float: right;
-font-size: 35px;
-font-weight: 400;
-margin-top: 20px;
-margin-right: 20px;
+	color: #000000;
+	float: right;
+	font-size: 35px;
+	font-weight: 400;
+	margin-top: 20px;
+	margin-right: 20px;
 }
 
 .close:hover, .close:focus {
-/*color: #000;*/
-text-decoration: none;
-cursor: pointer;
-color: red;
-/*cursor: pointer;*/
+	/*color: #000;*/
+	text-decoration: none;
+	cursor: pointer;
+	color: red;
+	cursor: pointer;
 }
 
 .loginbigtxt{
@@ -365,6 +365,8 @@ color: red;
 	box-sizing: border-box;
 }
 
+
+
 .iconbox {
 	position: relative;
 	/*left: 210px;*/
@@ -516,9 +518,9 @@ color: red;
 .gridcontainer {
 	/*top: 50px;*/
 	position: relative;
-	/*max-width: 1170px;*/
-	max-width: 81.25vw;
-	margin: 0 auto;
+	max-width: 1200px;
+	/*max-width: 81.25vw;*/
+	margin: 0 auto !important;
 	display: grid;
 	grid-gap: 1rem;
 	/*margin-left: 60px;*/
@@ -526,14 +528,14 @@ color: red;
 }
 
 .card {
-	/*background-color: dodgerblue;*/
+	background-color: dodgerblue;
 	color: white;
 	padding: 1rem;
 	height: 20rem;
 	float: center;
 	text-align: center;
 	vertical-align: middle;
-
+	/*width: 25%;*/
 
 }
 
@@ -583,7 +585,7 @@ color: red;
 @media (min-width: 0px) {
 	.gridcontainer { 
 		grid-template-columns: repeat(1, 1fr); 
-		max-width: 68vw;
+		max-width: 70vw;
 	}
 	.card {
 		margin-top: 100px;

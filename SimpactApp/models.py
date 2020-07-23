@@ -14,7 +14,7 @@ class VolOpp(models.Model):
     org_phone = models.CharField('Contact Phone', max_length=20, blank=True)
     age_requirements = models.IntegerField('Age Requirements', blank=False)
     points = models.IntegerField('Points Worth', blank=False)
-    vol_photo = DefaultStaticImageField('Upload Image',upload_to='voloppimgs/', blank=True, default_image_path='voloppimgs/default.png')
+    vol_photo = DefaultStaticImageField('Upload Image',upload_to='voloppimgs/', blank=True, default_image_path='/voloppimgs/default.png')
     
     FILTERS = (
             ('animal', 'Animals'),
