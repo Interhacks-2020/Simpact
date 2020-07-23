@@ -4,17 +4,30 @@ from django import forms
 import datetime
 
 class User(AbstractUser):
+    username = None
     is_volunteer = models.BooleanField(default=False)
     is_ngo = models.BooleanField(default=False)
     is_business = models.BooleanField(default=False)
+    email = models.EmailField(('email address'), unique=True)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
+
+    def __str__(self):
+        return self.email
+
+
+
+class Business(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    #Add what they can access here?
+
 
 class Volunteer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     #Add what they can access here?
 
-class Business(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    #Add what they can access here?
 
 '''
 class Ngo(models.Model):

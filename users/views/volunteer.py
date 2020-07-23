@@ -10,9 +10,30 @@ from ..decorators import volunteer_required
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 
-from ..forms import VolunteerSignUpForm
+from django.contrib.auth.forms import UserCreationForm
 from ..models import User
 
+'''
+from ..forms import VolunteerSignUpForm
+
+'''
+
+
+@login_required
+def index(request):
+    return render(request,'SimpactApp/index.html')
+def sign_up(request):
+    context = {}
+    form = UserCreationForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            user = form.save()
+            login(request,user)
+            return render(request,'users/dashboardbase.html')
+    context['form']=form
+    return render(request,'users/businesslogin.html',context)
+
+'''
 class VolunteerSignupView(CreateView):
     model = User
     form_class = VolunteerSignUpForm
@@ -29,7 +50,7 @@ class VolunteerSignupView(CreateView):
         login(self.request, user)
         return redirect('volunteer:dashboard')
 
-
+'''
 '''
 
 @method_decorator([login_required, volunteer_required], name = 'dispatch')
