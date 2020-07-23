@@ -1,18 +1,94 @@
 {% extends 'volopplistingbase.html' %}
+{% load static %}
 
 {% block title %}{{ "Volunteer: Opportunities" }}{% endblock title %}
 
 
 
-{% block voloppcontent %}
-		<!-- <h1>All VolOpps in Database</h1>
-		<ul>
-			{% for volopp in volopp_list %}
-				<li>{{ volopp.vol_title }}</li>
-			{% endfor %}
-		</ul> -->
+{% block volcontenttop %}
+<div class="findbox"> 
+	<div class="findtxt"> Find Volunteer Opportunities </div>
+	<div class="subfindtxt"> Filter by Cause Area(s):  </div>
 
-	<div class="gridcontainer" style="width: 100%"> 
+	<div class="iconbox"> 
+		<div class="iconrow">
+			<div class="iconcolumn">
+				<a href="#filter" style="text-decoration: none; color: #000000"> 
+					<div class="filtericon"> 
+						<img src="{% static 'filters/animals.png' %}" style="margin: 0 auto; margin-top: 12px;">
+					</div>
+					<div class="filtertxt"> Animals </div>
+				</a>
+			</div>
+			<div class="iconcolumn">
+				<div class="filtericon"> 
+					<img src="{% static 'filters/art.png' %}" style="margin: 0 auto; margin-top: 12px;">
+				</div>
+				<div class="filtertxt"> Arts & Music </div>
+			</div>
+			<div class="iconcolumn">
+				<div class="filtericon"> 
+					<img src="{% static 'filters/education.png' %}" style="margin: 0 auto; margin-top: 12px;">
+				</div>
+				<div class="filtertxt"> Education & Literacy </div>
+			</div>
+			<div class="iconcolumn">
+				<div class="filtericon"> 
+					<img src="{% static 'filters/environment.png' %}" style="margin-left: -3px; margin-top: 8px;">
+				</div>
+				<div class="filtertxt"> Environment  </div>
+			</div>
+			<div class="iconcolumn">
+				<div class="filtericon"> 
+					<img src="{% static 'filters/health.png' %}" style="margin: 0 auto; margin-top: 12px;">
+				</div>
+				<div class="filtertxt"> Health & Medicine </div>
+			</div>
+			<div class="iconcolumn">
+				<div class="filtericon"> 
+					<img src="{% static 'filters/justice.png' %}" style="margin: 0 auto; margin-top: 12px;">
+				</div>
+				<div class="filtertxt"> Justice & Legal </div>
+			</div>
+			<div class="iconcolumn">
+				<div class="filtericon"> 
+					<img src="{% static 'filters/more.png' %}" style="margin: 0 auto; margin-top: 25px;">
+				</div>
+				<div class="filtertxt"> More </div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<!-- OR -->
+	<hr class="horline">
+	<div class="ortxt"> OR </div>
+
+	<!-- Search -->
+	<div class="subfindtxt" style="width: 364px;"> Search by Keyword, Skill, or Interest:  </div>
+
+
+	<div class="searchcontainer"> 
+		<form action="/action_page.php">
+			<input type="text" placeholder="Animals, Red Cross, Food" name="search" class="searchbar" >
+
+			<button type="submit" class="submitbutton">Submit</button>
+		</form>
+	</div>
+
+</div>
+
+
+{% endblock volcontenttop %}
+
+
+
+
+
+{% block voloppcontent %}
+
+	<div class="gridcontainer" style="width: 100%; top: 150px"> 
 		{% for volopp in volopp_list %}
 			<div class="card">
 				<!-- <p> {{ volopp.vol_photo.url }} </p> -->
@@ -22,7 +98,7 @@
 				<div class="bottomcard"> 
 					{{ volopp.vol_title }}
 					<br> 
-					<a href="#new" style="text-decoration: none;"> 
+					<a href="{% url }" style="text-decoration: none;"> 
 						<div class="learnmorebutton"> Learn More </div> 
 					</a>
 				</div>
