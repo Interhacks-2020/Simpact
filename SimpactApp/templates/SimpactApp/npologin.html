@@ -29,6 +29,7 @@
 </head>
 
 <body>
+	{% load static %}
 	{% block content %}
 	<div class="logincard"> 
 		<div class="row">
@@ -68,7 +69,7 @@
 	    			<label for="psw" class="labeltxt" style="top: 60px"> Confirm Password </label>
 	    			<input type="password" class="txtinput" style="top: 60px" placeholder="Enter Password" name="psw" required>
 
-	    			<button type="submit" class="enterbutton" style="background: #4CB9B2; top: 130px" > SIGNUP </button>
+	    			<button type="submit" class="enterbutton" style="background: #4CB9B2; top: 130px" > <a href="{% url 'npo-dash' %}"> SIGNUP</a> </button>
 				</div>
 			</form>
 		</div> 

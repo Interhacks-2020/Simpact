@@ -17,6 +17,9 @@ def npoLogin(request):
 def volLogin(request):
     return render(request, 'SimpactApp/volunteerlogin.html')
 
+def npoDash(request):
+    return render(request, 'Users/dashboardbase.html')
+
 def simpactAbout(request):
     return HttpResponse('<h1> this is the about page <h1>')
 
