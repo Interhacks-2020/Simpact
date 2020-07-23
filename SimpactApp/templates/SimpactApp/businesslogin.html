@@ -29,12 +29,21 @@
 </head>
 
 <body>
-	{% load crispy_forms_tags %}
 	{% block content %}
+
+	<form method="post">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" value="Sign up">
+	</form>
 	<div class="logincard"> 
 		<div class="row">
-			<form method="POST" novalidate>
-			<!-- <form action="/action_page.php" method="POST"> -->
+
+			
+
+			
+			<!-- <form method="POST" >
+			<form action="/action_page.php" method="POST">
 				{% csrf_token %}
 				<div class="twocolumn" id="logincol">
 					<div class="bigheadertxt"> LOGIN </div>
@@ -49,8 +58,8 @@
 	    			 <div class="forgetpassword" > <a href="#forgetpass" style="text-decoration: none; color: #F57F17;" class="forpassid"> Forget Password? </a> </div>
 					
 					 <input type="hidden" name="next" value="/index.html">
-					 {{ form|crispy }}
-	    			<button type="submit" class="enterbutton" style="background: #F57F17"> LOGIN </button>
+					 
+	    			<button type="submit" value = "Login" class="enterbutton" style="background: #F57F17"> LOGIN </button>
 				</div>
 			</form>
 
@@ -58,8 +67,9 @@
 
 			<hr>
 
-			<form action="/action_page.php" method="post">
+			<form method="post">
 				<div class="twocolumn" id="signupcol">
+					{% csrf_token %}
 					<div class="bigheadertxt"> SIGNUP </div>
 					<div class="usertagtxt" style="color: #4CB9B2;"> business </div>
 
@@ -72,10 +82,10 @@
 	    			<label for="psw" class="labeltxt" style="top: 60px"> Confirm Password </label>
 	    			<input type="password" class="txtinput" style="top: 60px" placeholder="Enter Password" name="psw" required>
 
-	    			<button type="submit" class="enterbutton" style="background: #4CB9B2; top: 130px" > SIGNUP </button>
+	    			<button type="submit" value = "Sign up" class="enterbutton" style="background: #4CB9B2; top: 130px" > SIGNUP </button>
 				</div>
 			</form>
-		</div> 
+		</div>  -->
 	</div>
 	{% endblock content %}
 </body>
