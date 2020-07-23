@@ -41,10 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'crispy_forms',
-    'multiselectfield',
-    'django_fields',
-    'django_filters',
-    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -144,6 +140,3 @@ STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'users.User'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'imgs')
-MEDIA_URL = '/imgs/'
-#DEFAULT_IMAGE_PATH = 'voloppimgs/default.png'
