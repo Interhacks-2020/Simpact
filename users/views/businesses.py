@@ -86,7 +86,31 @@ def sign_up(request):
             form = BusinessSignUpForm()
         return render(request, 'businesslogin.html', {'form': form})
 '''
+@login_required
+def index(request):
+    return render(request,'SimpactApp/index.html')
+def sign_up(request):
+    if request.method == "POST":
+        form = BusinessSignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = None
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(password=raw_password)
+            login(request, user)
+            return redirect('index.html')
+        else:
+            form = BusinessSignUpForm()
+        return render(request, 'businesslogin.html', {'form': form})
 
+
+'''
+@method_decorator([login_required, business_required], name = 'dispatch')
+class BusinessDashboardView(UpdateView):
+    model = Business
+    form_class = BusinessDashboardForm
+    template_name = 'templates/users/BDashboard.html'
+'''
 
 
 @login_required
