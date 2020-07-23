@@ -37,7 +37,8 @@ def add_volopp(request):
             form.vol_photo = request.FILES['vol_photo']
             form.save()
 #            return HttpResponseRedirect('add_volopp/?submitted=True')
-            return HttpResponseRedirect('/?submitted=True')
+#            return HttpResponseRedirect('/?submitted=True')
+            return render(request, 'SimpactApp/voloppsubmitted.html')
     else:
         form = VolOppForm()
         if 'submitted' in request.GET:

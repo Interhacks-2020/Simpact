@@ -25,7 +25,7 @@ class VolOpp(models.Model):
             ('justice', 'Jusitce & Legal'),
             ('others', 'Others')
             )
-    vol_filters = MultiSelectField(choices = FILTERS, default="")
+    vol_filters = MultiSelectField('Filters', choices = FILTERS, default="")
     
     
     def __str__(self):
