@@ -1,7 +1,11 @@
 {% extends 'volopplistingbase.html' %}
+{% load static %}
 
 {% block title %}{{ "Volunteer: Opportunities" }}{% endblock title %}
 
+{% block volcontenttop %}
+	<br>
+{% endblock volcontenttop %}
 
 {% block voloppcontent %}
 
@@ -12,7 +16,7 @@
 	</div>
 		<div class="points">
 	<div class= "points_img">
-			 <img src="trophy.svg"></div>
+			 <img src="{% static 'trophy.svg' %}"></div>
 		<div class = "points_text">
 			<span style="font-weight: 900; font-size: 70px;"> 10 </span> <span style="font-weight:400; font-size: 50px;">PTS</span>
 		</div>
@@ -27,9 +31,19 @@
 
 			<p>Volunteers are needed to help donate food to restock the food bank, including:
 			Canned vegetables, Canned soups, Cereals, Pasta, Rice, Beans.<br> <br>Additionally, volunteers are needed for sorting and packing of food boxes for distribution.</p>
+			<br> 
 				
-			<p><a href="https://www.foodbanknyc.org/"> www.foodbanknyc.org</a></p>
-		</div>
+			<center> <p><a href="https://www.foodbanknyc.org/" style="color: #4CB9B2"> Access Home Page</a></p> </center>
+
+			<center> <div class="popup" onclick="popupLogin()"> 
+				<div class="claimopp"> 
+					Join Opportunity!
+				</div>
+ 				<span class="popuptext" id="myPopup"> 
+	 				You must be logged in to sign up for an opportunity. 
+ 				</span>
+			</div> </center>
+	</div>
 		<div class="oppt_specifics">
 			<div class="oppt_specifics_txt">
 			<div class="where">
@@ -53,8 +67,19 @@
 
 	</div>
 	<div class="volunteer_img">
-		<img src="foodbanknyc.png" width="520">
+		<img src="{% static 'foodbanknyc.png' %}" width="520">
 	</div>
 </div>
 
+
+
+<script>
+// When the user clicks on div, open the popup
+function popupLogin() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+</script>
+
 {% endblock voloppcontent %}
+<br> <br>

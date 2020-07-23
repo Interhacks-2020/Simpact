@@ -1,22 +1,118 @@
 <!doctype html>
 <html>
 <head>
-  {% load static %}
+	{% load static %}
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{% static '/src_business/smallbusinessdashboard.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'dashboard.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'businessdash.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'smallbusinessdashboard.css' %}"> -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
 
-	<title> Small Business Dashboard </title>
+	<title> Small Business Perks </title>
 
+	<style>
+		body {
+			font-family: Roboto;
+			font-style: normal;
+			font-weight: normal;
+			color: #000000;
+		}
+
+		.perkbox {
+			position: relative;
+			height: 50px;
+			top: 100px;
+			width: 72.91vw;
+			margin: 0 auto;
+
+
+			background: #4DB6AC;
+			border-radius: 50px;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		.threecolumn {
+			position: relative;
+			float: left;
+			width: 33%;
+			height: 100%;
+			margin: 0 auto;
+			margin-top: 15px;
+
+			font-size: 18px;
+			line-height: 21px;
+			/* identical to box height */
+
+
+			color: #FFFFFF;
+
+		}
+
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+		.addperkbutton {
+			position: relative;
+			height: 45px;
+			width: 200px;
+			top: 200px;
+			margin: 0 auto !important;
+			display: block;
+
+			background: #F2C34A;
+			border-radius: 50px;
+			border: none;
+
+			font-weight: bold;
+			font-size: 18px;
+			line-height: 21px;
+			/* identical to box height */
+
+			color: #FFFFFF;
+
+			padding-left: 18px;
+			padding-right: 18px; 
+		}
+
+		.addperkbutton:hover {
+			background: #F57F17;
+		}
+
+		@media only screen and (max-width: 850px) {
+			.perkbox {
+				width: 80%;
+			}
+		}
+
+		@media only screen and (max-width: 1000px) {
+			.threecolumn {
+				position: relative;
+				width: 100%;
+				text-align: center !important;
+				padding-left: 0px !important;
+				padding-right: 0px !important;
+			}
+
+			.perkbox {
+				height: 125px;
+			}
+		}
+	</style>
 </head>
 
 <body>
 
-<!-- Beginning of Navbar -->
+	<!-- Beginning of Navbar -->
 	<div class="sidenavbar"> 
-		<a href="{% url 'simpact-home' %}" > 
+		<a href="#home" > 
 		   	<!-- <svg xmlns="../navbar/home.svg" class="homesvg"> </svg>  -->
 		   	<svg width="51" height="46" viewBox="0 0 51 46" fill="none" xmlns="http://www.w3.org/2000/svg" class="homesvg">
 				<path fill-rule="evenodd" clip-rule="evenodd" d="M25.7195 0.246109C25.3429 -0.0820375 24.782 -0.082036 24.4055 0.246111L0.345004 21.2144C-0.351854 21.8217 0.0776593 22.9682 1.00201 22.9682H4.48478V44.8491C4.48478 45.1253 4.70864 45.3491 4.98478 45.3491H45.1383C45.4145 45.3491 45.6383 45.1253 45.6383 44.8491V22.9682H49.1229C50.0473 22.9682 50.4768 21.8216 49.7799 21.2144L25.7195 0.246109Z" fill="white" class="homesvgpath"/>
@@ -31,7 +127,7 @@
 		</a>
 
 
-		<a href="{% url 'bus-promote' %}"> 
+		<a href="#promote"> 
 			<svg width="50" height="41" viewBox="0 0 50 41" fill="none" xmlns="http://www.w3.org/2000/svg" class="promotesvg">
 			<path fill-rule="evenodd" clip-rule="evenodd" d="M35.3771 0L8.84426 10.3183V10.3184H4.42213V13.2666H0V26.533H4.42214L4.42213 29.481H8.59575L12.9079 40.9069L19.7916 40.7622L16.0637 30.6842L35.3771 33.9031V33.8507C37.4547 33.7385 39.1304 26.7771 39.1304 17.5477C39.1304 8.31836 37.4547 0.287602 35.3771 0.158026V0ZM43.4783 16.4608C43.4783 16.1606 43.7216 15.9173 44.0217 15.9173H49.4565C49.7567 15.9173 50 16.1606 50 16.4608C50 16.7609 49.7567 17.0043 49.4565 17.0043H44.0217C43.7216 17.0043 43.4783 16.7609 43.4783 16.4608ZM41.9003 5.21663C41.5712 5.44278 41.4877 5.89295 41.7138 6.22212C41.94 6.55128 42.3902 6.63478 42.7193 6.40863L47.1153 3.38832C47.4445 3.16216 47.528 2.71199 47.3019 2.38283C47.0757 2.05367 46.6255 1.97016 46.2964 2.19631L41.9003 5.21663ZM41.7138 26.296C41.4877 26.6251 41.5712 27.0753 41.9003 27.3014L46.2964 30.3218C46.6255 30.5479 47.0757 30.4644 47.3019 30.1352C47.528 29.8061 47.4445 29.3559 47.1153 29.1298L42.7193 26.1094C42.3902 25.8833 41.94 25.9668 41.7138 26.296Z" fill="white" class="promotesvgpath"/>
 			</svg>
@@ -43,9 +139,8 @@
 
 
 <!-- Beginning of Content -->
-<!-- Please include all content inside this div -->
-	<div class="content">
-		<div class="titletxt" style="width: 80%"> BUSINESS: HOME </div>
+	<div class="content" style="height: 1300px">
+		<div class="titletxt"> PERKS </div>
 
 		<svg width="40" height="36" viewBox="0 0 40 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="bellsvg">
 			<ellipse cx="19.5" cy="32.5" rx="7.5" ry="3.5" fill="#454545"/>
@@ -53,121 +148,104 @@
 		</svg>
 
 		<div class="dropdown">
-      <img src="{% static 'busicon.svg' %}" class="usericon">
+			<!-- <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="usericon">
+				<circle cx="20" cy="20" r="19.5" fill="url(#pattern0)" stroke="#FBC02D"/>
+			</svg> -->
+			<img src="{% static 'busicon.svg' %}" class="usericon" style="margin-top: 30px">
 
 			<ul class="dropdown-content">
-				<li style = "color: black; font-weight: bold; padding: 12px 16px; text-decoration: none; display: block;"> Hello {{user}} </li>
+				<li style = "color: black; font-weight: bold; padding: 12px 16px; text-decoration: none; display: block;"> Hello {{ user }} !</li>
 				<li><a href="#"> DASHBOARD </a></li>
-        <li><a href="#"> EDIT PROFILE </a></li>
-        <li><a href="{% url 'logout' %}"> LOGOUT </a></li>
+				<li><a href="#"> EDIT PROFILE </a></li>
+				<li><a href="{% url 'logout' %}"> LOGOUT </a></li>
 			</ul>
 		</div>
 
 		<div class="welcomebox"> 
-            <div class="welcometxt"> Welcome Back, {{user}} <br> <span style="font-size: 24px; font-weight: normal">Track your advertisements and create more.</span></div>
-            <div>
-            <img src="{% static '/src_business/welcomeimg.svg' %}" class="welcome_img">
-        </div>
-    </div>
+			<div class="welcometxt" style="width:80%"> Welcome Back, {{ user }} ! </div> 
+			<div class="welcomecontxt"> Check, manage, and set your preferences. </div>
+		</div>
 
-		<div class="boxtemplate">
-            <div class="headertxttemplate"> A Month in Review </div>
-            <div class="dashboardstats">
-                <div class="statsbox">
-                    <div class="headertext">Total Redeemed</div>
-                    <div class="pointsredeemed">
-                        <img src="{% static '/src_business/redeemimg.svg' %}" class="statsimg">
-                        <div class="descriptiontext">21</div>
-                    </div>
-                </div>
 
-                <div class="statsbox">
-                    <div class="headertext">Total Redeemed</div>
-                    <div class="pointsredeemed">
-                        <img src="{% static '/src_business/purchaseimg.svg' %}" class="statsimg">
-                        <div class="descriptiontext">47</div>
-                    </div>
-                </div>
+		<!-- Active Box -->
+		<div class="boxtemplate" style="height: 450px;">
+			<div class="headertxttemplate"> Active </div>
 
-                <div class="statsbox">
-                    <div class="headertext">Total Redeemed</div>
-                    <div class="pointsredeemed">
-                        <img src="{% static '/src_business/perkimg.svg' %}" class="statsimg">
-                        <div class="descriptiontext">10</div>
-                    </div>
-                </div>
+			<div class="perkbox"> 
+				<div class="row" id="perk1">
+					<div class="threecolumn" style="text-align: left; padding-left: 40px;" id="perk1name">
+						1 Ice Coffee
+					</div>
+					<div class="threecolumn" style="text-align: center;" id="perk1time">
+						Forever
+					</div>
+					<div class="threecolumn" style="text-align: right; padding-right: 40px" id="perk1point">
+						1000 Points
+					</div>
+				</div>
+			</div>
 
-            </div>
-        </div>
-        
-        <div class="boxtemplate2">
-            <div class="headertxttemplate"> Overview </div>
-            <div class="datedropdown">
-            <form action="/action_page.php" class="dropdowntext">
-                <select name="date" id="date">
-                  <option value="june">2020.06</option>
-                  <option value="may">2020.05</option>
-                  <option value="april">2020.04</option>
-                  <option value="march">2020.03</option>
-                  <option value="february">2020.02</option>
-                  <option value="january">2020.01</option>
-                </select>
-            </form>
-        </div>
+			<div class="perkbox" style="top: 150px"> 
+				<div class="row" id="perk1">
+					<div class="threecolumn" style="text-align: left; padding-left: 40px;" id="perk1name">
+						1 Bacon egg and cheese
+					</div>
+					<div class="threecolumn" style="text-align: center;" id="perk1time">
+						10/5/19 - 6/21/20
+					</div>
+					<div class="threecolumn" style="text-align: right; padding-right: 40px" id="perk1point">
+						1500 Points
+					</div>
+				</div>
+			</div>
 
-        <div class="revenuetext">
-            <div class="revenuenumber">$1250.00</div>
-            <div class="revenuedescription">Total Revenue in Month</div>
-        </div>
 
-        <div class="revenuegraph">
-        <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'Daily')" id="defaultOpen">Daily</button>
-            <button class="tablinks" onclick="openCity(event, 'Monthly')">Monthly</button>
-            <button class="tablinks" onclick="openCity(event, 'Yearly')">Yearly</button>
-          </div>
+			<a href="{% url 'bus-newperks' %}" style="text-decoration: none; cursor: pointer;">
+				<button type="button" class="addperkbutton" style="cursor: pointer;"> 
+					<span class="glyphicon glyphicon-plus"></span> Add New Perk
+				</button>
+			</a>
 
-          <div id="Daily" class="tabcontent">
-            <img src="{% static '/src_business/dailyrevenuegraph.svg' %}">
-          </div>
-          
-          <div id="Monthly" class="tabcontent">
-            <img src="{% static '/src_business/monthlycal.svg' %}">
-          </div>
-          
-          <div id="Yearly" class="tabcontent">
-            <h3>Yearly</h3>
-            <p>Yearly data is not available. Keep using Simpact to view your yearly revenue graph!</p>
-          </div>
+		</div>
 
-        </div>
-        </div>
-    </div>
 
-        <script>
-            function openCity(evt, cityName) {
-              var i, tabcontent, tablinks;
-              tabcontent = document.getElementsByClassName("tabcontent");
-              for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-              }
-              tablinks = document.getElementsByClassName("tablinks");
-              for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-              }
-              document.getElementById(cityName).style.display = "block";
-              evt.currentTarget.className += " active";
-            }
-            
-            // Get the element with id="defaultOpen" and click on it
-            document.getElementById("defaultOpen").click();
-            </script>
-        
+		<!-- Inactive Box -->
+		<div class="boxtemplate" style="height: 350px; top: 200px">
+			<div class="headertxttemplate"> Inactive </div>
+
+			<div class="perkbox"> 
+				<div class="row" id="perk1">
+					<div class="threecolumn" style="text-align: left; padding-left: 40px;" id="perk1name">
+						2 Small Iced Coffee
+					</div>
+					<div class="threecolumn" style="text-align: center;" id="perk1time">
+						5/20/20 - 5/25/20
+					</div>
+					<div class="threecolumn" style="text-align: right; padding-right: 40px" id="perk1point">
+						1000 Points
+					</div>
+				</div>
+			</div>
+
+			<div class="perkbox" style="top: 150px"> 
+				<div class="row" id="perk1">
+					<div class="threecolumn" style="text-align: left; padding-left: 40px;" id="perk1name">
+						Avocado Toast
+					</div>
+					<div class="threecolumn" style="text-align: center;" id="perk1time">
+						4/21/20
+					</div>
+					<div class="threecolumn" style="text-align: right; padding-right: 40px" id="perk1point">
+						1000 Points
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
 
 	</div>
 
+
 </body>
-
-
-
-</html>

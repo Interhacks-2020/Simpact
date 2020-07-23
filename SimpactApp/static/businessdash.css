@@ -1,0 +1,51 @@
+.homesvg {
+	/*color: #FFFFFF;*/
+	fill: #FFFFFF;
+	width: 40px;
+}
+
+.homesvg:hover {
+	width: 80px;
+/*box-shadow: 120px 80px 40px 20px #0ff;*/
+}
+
+.homesvgpath:hover {
+	/*fill: #FBC02D;*/
+	width: 80px;
+	/*box-shadow: 120px 80px 40px 20px #0ff;*/
+}
+
+.homesvgpath:active {
+	fill: #FBC02D;
+}
+
+.perkssvg {
+	fill: #FFFFFF;	
+}
+
+.perkssvg:hover {
+	margin-top: -10px;
+	width: 60px;
+	height: 60px;
+
+}
+
+.perkssvgpath:active {
+	fill: #FBC02D;
+}
+
+.promotesvg {
+	margin-top: 10px;
+	width: 45px;
+}
+
+.promotesvg:hover {
+	margin-top: 0px;
+	width: 55px;
+	height: 50px;
+}
+
+
+.promotesvgpath:active {
+	fill: #FBC02D;
+}

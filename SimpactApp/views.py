@@ -16,9 +16,24 @@ def npoLogin(request):
 
 def volLogin(request):
     return render(request, 'SimpactApp/volunteerlogin.html')
+    
+def volDashboard(request):
+    return render(request, 'SimpactApp/vdash.html')
 
 def npoDash(request):
     return render(request, 'Users/dashboardbase.html')
+
+def npoDashboard(request):
+    return render(request, 'SimpactApp/npodash.html')
+
+def busPerks(request):
+    return render(request, 'SimpactApp/allperks.html')
+    
+def busNewPerks(request):
+    return render(request, 'SimpactApp/newperks.html')
+    
+def busPromote(request):
+    return render(request, 'SimpactApp/promote.html')
 
 def simpactAbout(request):
     return HttpResponse('<h1> this is the about page <h1>')
